@@ -31,9 +31,30 @@ python -m venv .venv
 ```
 
 Open http://127.0.0.1:5000 and create an account. The database is created automatically
-in `instance/stride.sqlite`. There are no preconfigured accounts or fabricated activity counts.
+in `instance/stride.sqlite`. A fresh database starts empty; optional demo data is available below.
 The commands call the virtual environment's Python directly, so activation is unnecessary.
 Stop the development server with `Ctrl+C`.
+
+### Mock users and activities
+
+Populate the local database with realistic sample profiles:
+
+```powershell
+.\.venv\Scripts\python -m flask --app app seed-demo
+```
+
+This adds 28 users, 168 completed workouts, 7 groups covering all supported sports,
+56 upcoming training sessions, and 28 upcoming events with reservations and RSVPs.
+Each mock profile has six workouts, group membership, permission to schedule training,
+two created training sessions, and one created event. Dates are relative to the first
+run in Sofia local time. The football friend group is private.
+
+Sign in as `elena.petrova@demo.example` with password `StrideDemo2026!`, or use
+any mock user's lowercase first/last name in the same email format. All mock accounts
+share this password and use the reserved `demo.example` domain; use them for local demos.
+Existing records are preserved. Repeat runs make no changes, including to dates or
+passwords. A conflicting demo email aborts the entire seed rather than changing an account.
+Seeding is explicit and never runs automatically at application startup.
 
 On Linux or macOS:
 

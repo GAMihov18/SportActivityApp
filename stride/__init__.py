@@ -24,6 +24,8 @@ def create_app(test_config=None):
         app.config['SECRET_KEY'] = key_path.read_text().strip()
     init_i18n(app)
     init_database(app, root / 'schema.sql')
+    from .demo import init_app as init_demo
+    init_demo(app)
 
     @app.before_request
     def load_user_and_check_csrf():
