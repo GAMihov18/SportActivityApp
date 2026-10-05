@@ -1,0 +1,21 @@
+{% extends 'base.html' %}{% from 'macros.html' import token with context %}{% block title %}{{ _('Create an account') if registering else _('Sign in') }}{% endblock %}
+{% block content %}<section class="auth-layout">
+<div>
+<p class="eyebrow">{{ _('WELCOME TO STRIDE') }}</p>
+<h1>{{ _('A fresh start.') if registering else _('Welcome back.') }}</h1>
+<p class="auth-intro">{{ _('Your next workout. Your new community. It all starts here.') }}</p>
+<div class="auth-art" aria-hidden="true">
+<img src="{{ url_for('static', filename='stride-emblem.svg') }}" alt="" width="180" height="180">
+</div>
+</div>
+<div class="card auth-card">
+<h2>{{ _('Create an account') if registering else _('Sign in') }}</h2>
+<form method="post" class="entry-form">{{ token() }}{% if registering %}<label>{{ _('Your name') }}<input name="name" autocomplete="name" maxlength="80" required>
+</label>{% endif %}<label>{{ _('Email') }}<input name="email" type="email" autocomplete="email" maxlength="254" required>
+</label>
+<label>{{ _('Password') }}<input name="password" type="password" autocomplete="{{ 'new-password' if registering else 'current-password' }}" minlength="{{ 8 if registering else 1 }}" maxlength="128" required>
+</label>{% if registering %}<p class="muted">{{ _('At least 8 characters.') }}</p>{% endif %}<button class="button dark">{{ _('Create an account') if registering else _('Sign in') }} <span aria-hidden="true">&#8599;</span></button>
+</form>
+<p class="auth-switch">{% if registering %}{{ _('Already a member?') }} <a href="{{ url_for('accounts.login') }}">{{ _('Sign in') }}</a>{% else %}{{ _('New here?') }} <a href="{{ url_for('accounts.register') }}">{{ _('Create an account') }}</a>{% endif %}</p>
+</div>
+</section>{% endblock %}

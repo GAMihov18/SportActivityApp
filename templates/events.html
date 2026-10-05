@@ -1,0 +1,32 @@
+{% extends 'base.html' %}{% from 'macros.html' import token,sport_select,event_card,filters with context %}{% block title %}{{ _('Events') }}{% endblock %}
+{% block content %}<div class="page-heading">
+<div>
+<p class="eyebrow">{{ _('PUT SOMETHING GOOD ON YOUR CALENDAR') }}</p>
+<h1>{{ _('Upcoming events') }}</h1>
+<p>{{ _('Show up, try something new, and move together.') }}</p>
+</div>{% if g.user %}<button class="button dark" data-open="create-dialog">＋ {{ _('Create an event') }}</button>{% else %}<a class="button dark" href="{{ url_for('accounts.login') }}">＋ {{ _('Create an event') }}</a>{% endif %}</div>{{ filters() }}<p class="muted">{{ _('Event times use the organiser’s local time. Confirm the time zone with them when travelling.') }}</p>
+<div class="event-stack">{% for event in events %}{{ event_card(event) }}{% else %}<div class="card empty">
+<span>▦</span>
+<h3>{{ _('Make something happen.') }}</h3>
+<p>{{ _('Create an event and bring people together.') }}</p>
+</div>{% endfor %}</div>
+{% if g.user %}<dialog id="create-dialog">
+<div class="dialog-heading">
+<h2>{{ _('Create an event') }}</h2>
+<button class="text-button" data-close aria-label="{{ _('Close') }}">×</button>
+</div>
+<form method="post" class="entry-form">{{ token() }}<label>{{ _('Event title') }}<input name="title" maxlength="100" required>
+</label>{{ sport_select() }}<label>{{ _('Location') }}<input name="location" maxlength="160" required>
+</label>
+<div class="form-row">
+<label>{{ _('Date and time') }}<input name="starts_at" type="datetime-local" min="{{ now }}" required>
+</label>
+<label>{{ _('Capacity') }}<input name="capacity" type="number" min="1" max="10000" value="20" required>
+</label>
+</div>
+<label>{{ _('Event details') }}<textarea name="description" rows="3" maxlength="2000" required>
+</textarea>
+</label>
+<button class="button dark">{{ _('Create an event') }} ↗</button>
+</form>
+</dialog>{% endif %}{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}{% from 'macros.html' import token,sport_select,workout_row,filters with context %}{% block title %}{{ _('Workouts') }}{% endblock %}
+{% block content %}<div class="page-heading">
+<div>
+<p class="eyebrow">{{ _('BUILD YOUR MOMENTUM') }}</p>
+<h1>{{ _('Your workouts') }}</h1>
+<p>{{ _('Small steps add up. Keep a record of yours.') }}</p>
+</div>
+<button class="button dark" data-open="create-dialog">＋ {{ _('Log a workout') }}</button>
+</div>
+{{ filters() }}<div class="card workout-list">{% for activity in activities %}{{ workout_row(activity,true) }}{% else %}<div class="empty">
+<span>↗</span>
+<h3>{{ _('Your next chapter starts here.') }}</h3>
+<p>{{ _('Log your first workout and watch your progress grow.') }}</p>
+</div>{% endfor %}</div>
+<dialog id="create-dialog">
+<div class="dialog-heading">
+<h2>{{ _('Log a workout') }}</h2>
+<button class="text-button" data-close aria-label="{{ _('Close') }}">×</button>
+</div>
+<form method="post" class="entry-form">{{ token() }}<label>{{ _('Workout title') }}<input name="title" maxlength="100" required>
+</label>{{ sport_select() }}<div class="form-row">
+<label>{{ _('Duration (minutes)') }}<input name="minutes" type="number" min="1" max="1440" value="30" required>
+</label>
+<label>{{ _('Date') }}<input name="activity_date" type="date" value="{{ today }}" max="{{ today }}" required>
+</label>
+</div>
+<label>{{ _('Notes (optional)') }}<textarea name="notes" maxlength="2000" rows="3">
+</textarea>
+</label>
+<button class="button dark">{{ _('Save workout') }} ↗</button>
+</form>
+</dialog>{% endblock %}

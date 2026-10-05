@@ -1,0 +1,56 @@
+{% macro sport_select() %}<label>{{ _('Sport') }}<select name="sport" required>{% for sport in sports %}<option value="{{ sport }}">{{ _(sport) }}</option>{% endfor %}</select>
+</label>{% endmacro %}
+{% macro token() %}<input type="hidden" name="csrf" value="{{ csrf }}">{% endmacro %}
+{% macro group_card(group) %}
+<article class="card group-card searchable" data-sport="{{ group.sport }}">
+  <div class="card-top">
+<span class="sport-icon {{ group.sport|lower }}">{{ {'Running':'↗','Cycling':'◉','Strength':'✦','Swimming':'≈','Yoga':'☼','Football':'◈','Hiking':'△'}[group.sport] }}</span>
+<span class="tag">{{ _(group.sport) }}</span>
+</div>
+  <h3>
+<a href="{{ url_for('groups.detail',group_id=group.id) }}">{{ group.name }} ↗</a>
+</h3>
+<p class="location">⌖ {{ group.location }} · {{ _('Private friends') if group.private else (_('Club') if group.kind == 'club' else _('Community')) }}</p>
+<p class="description">{{ group.description }}</p>
+  <div class="card-bottom">
+<span>◎ {{ group.members }} {{ _('members') }}</span>{% if g.user %}<form method="post" action="{{ url_for('groups.membership',group_id=group.id) }}">{{ token() }}<input type="hidden" name="action" value="{{ 'leave' if group.joined else 'join' }}">
+<button class="button small {{ 'secondary' if group.joined else 'dark' }}">{{ _('Leave group') if group.joined else _('Join group') }}</button>
+</form>{% else %}<a class="button small secondary" href="{{ url_for('accounts.login') }}">{{ _('Join group') }} ↗</a>{% endif %}</div>
+</article>
+{% endmacro %}
+{% macro event_card(event) %}
+<article class="card event-card searchable" data-sport="{{ event.sport }}">
+<div class="event-date">
+<strong>{{ event.starts_at[8:10] }}</strong>
+<span>{{ event.starts_at|local_date('MMM yyyy') }}</span>
+</div>
+<div class="event-info">
+<span class="tag">{{ _(event.sport) }}</span>
+<h3>{{ event.title }}</h3>
+<p class="location">⌖ {{ event.location }} <span>·</span> {{ event.starts_at[11:16] }}</p>
+<p class="description">{{ event.description }}</p>
+<span class="attendees">{{ event.attendees }} / {{ event.capacity }} {{ _('going') }}</span>
+</div>
+{% if g.user %}<form method="post" action="{{ url_for('events.rsvp',event_id=event.id) }}">{{ token() }}<input type="hidden" name="action" value="{{ 'cancel' if event.joined else 'join' }}">
+<button class="button small {{ 'secondary' if event.joined else 'dark' }}" {% if not event.joined and event.attendees >= event.capacity %}disabled{% endif %}>{{ _('Cancel RSVP') if event.joined else (_('Full') if event.attendees >= event.capacity else _('Attend')) }}</button>
+</form>{% else %}<a href="{{ url_for('accounts.login') }}" class="button small secondary">{{ _('Attend') }} ↗</a>{% endif %}</article>
+{% endmacro %}
+{% macro workout_row(activity, deletable=false) %}
+<div class="workout-row searchable" data-sport="{{ activity.sport }}">
+<span class="sport-icon {{ activity.sport|lower }}">↗</span>
+<div class="workout-name">
+<strong>{{ activity.title }}</strong>
+<small>{{ _(activity.sport) }} <span>·</span> {{ activity.activity_date|local_date }}</small>{% if activity.notes %}<p>{{ activity.notes }}</p>{% endif %}</div>
+<span class="duration">{{ activity.minutes }} <small>{{ _('min') }}</small>
+</span>{% if deletable %}<form method="post" action="{{ url_for('workouts.delete_workout',workout_id=activity.id) }}" data-confirm="{{ _('Delete this workout?') }}">{{ token() }}<button class="text-button delete" aria-label="{{ _('Delete workout') }}">×</button>
+</form>{% else %}<span class="complete">✓</span>{% endif %}</div>
+{% endmacro %}
+{% macro filters() %}<div class="filters">
+<label class="search-label">
+<span>⌕</span>
+<input type="search" id="search" placeholder="{{ _('Search by name or location…') }}" aria-label="{{ _('Search') }}">
+</label>
+<select id="sport-filter" aria-label="{{ _('Filter by sport') }}">
+<option value="">{{ _('All sports') }}</option>{% for sport in sports %}<option value="{{ sport }}">{{ _(sport) }}</option>{% endfor %}</select>
+</div>
+<p id="no-results" class="empty" hidden>{{ _('No matches. Try another search.') }}</p>{% endmacro %}

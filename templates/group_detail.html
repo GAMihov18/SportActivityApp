@@ -1,0 +1,27 @@
+{% extends 'base.html' %}{% from 'macros.html' import token with context %}{% block title %}{{ group.name }}{% endblock %}
+{% block content %}<a class="muted" href="{{ url_for('groups.groups') }}">← {{ _('All groups') }}</a>
+<div class="page-heading">
+<div>
+<p class="eyebrow">{{ _(group.sport) }} · {{ _('Private friends') if group.private else (_('Club') if group.kind == 'club' else _('Community')) }}</p>
+<h1>{{ group.name }}</h1>
+<p>⌖ {{ group.location }}</p>
+</div>{% if member %}<a class="button dark" href="{{ url_for('training.training') }}">{{ _('Group training') }} ↗</a>{% elif g.user %}<form method="post" action="{{ url_for('groups.membership',group_id=group.id) }}">{{ token() }}<button class="button dark">{{ _('Join group') }}</button>
+</form>{% else %}<a class="button dark" href="{{ url_for('accounts.login') }}">{{ _('Join group') }}</a>{% endif %}</div>
+<section class="card detail-panel">
+<h2>{{ _('About your group') }}</h2>
+<p class="description">{{ group.description }}</p>
+</section>
+{% if member %}{% if group.private %}<section class="card detail-panel">
+<h2>{{ _('Invite your friends') }}</h2>
+<p class="muted">{{ _('Share this code with someone you want to join your group.') }}</p>
+<code class="invite-code">{{ group.invite_code }}</code>
+</section>{% endif %}<section class="card detail-panel">
+<h2>{{ _('Members and permissions') }}</h2>
+<p class="muted">{{ _('The owner can give members permission to schedule group training.') }}</p>{% for person in members %}<div class="member-row">
+<span class="avatar">{{ person.name[0]|upper }}</span>
+<div class="workout-name">
+<strong>{{ person.name }}</strong>
+<small>{{ _('Owner') if person.id == group.owner_id else (_('Can schedule training') if person.can_schedule else _('Member')) }}</small>
+</div>{% if g.user.id == group.owner_id and person.id != group.owner_id %}<form method="post" action="{{ url_for('groups.permissions',group_id=group.id,user_id=person.id) }}">{{ token() }}<input type="hidden" name="action" value="{{ 'revoke' if person.can_schedule else 'grant' }}">
+<button class="button secondary small">{{ _('Revoke scheduling') if person.can_schedule else _('Allow scheduling') }}</button>
+</form>{% endif %}</div>{% endfor %}</section>{% endif %}{% endblock %}

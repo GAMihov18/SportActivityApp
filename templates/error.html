@@ -1,0 +1,4 @@
+{% extends 'base.html' %}{% block content %}<div class="card empty">
+<h1>{{ error.code }}</h1>
+<p>{{ _('We could not complete that request.') }}</p>{% if error.code == 400 %}<p>{{ _('Refresh the page and try again.') }}</p>{% endif %}<a href="{{ url_for('dashboard.dashboard') }}" class="button dark">{{ _('Back to overview') }}</a>
+</div>{% endblock %}

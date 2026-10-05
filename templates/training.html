@@ -1,0 +1,53 @@
+{% extends 'base.html' %}{% from 'macros.html' import token,filters with context %}{% block title %}{{ _('Training') }}{% endblock %}
+{% block content %}<div class="page-heading">
+<div>
+<p class="eyebrow">{{ _('MAKE TIME FOR PROGRESS') }}</p>
+<h1>{{ _('Scheduled training') }}</h1>
+<p>{{ _('Training sessions for your groups. Reserve your next session.') }}</p>
+</div>{% if eligible_groups %}<button class="button dark" data-open="create-dialog">＋ {{ _('Schedule training') }}</button>{% endif %}</div>{{ filters() }}<p class="muted">{{ _('Session times use the group’s local time. Confirm the time zone with your group.') }}</p>
+<div class="event-stack">{% for item in sessions %}<article class="card event-card searchable" data-sport="{{ item.sport }}">
+<div class="event-date">
+<strong>{{ item.starts_at[8:10] }}</strong>
+<span>{{ item.starts_at|local_date('MMM yyyy') }}</span>
+</div>
+<div class="event-info">
+<a class="tag" href="{{ url_for('groups.detail',group_id=item.group_id) }}">{{ item.group_name }}</a>
+<h3>{{ item.title }}</h3>
+<p class="location">⌖ {{ item.location }} · {{ item.starts_at[11:16] }} · {{ item.minutes }} {{ _('min') }}</p>
+<p class="description">{{ item.description }}</p>
+<span class="attendees">{{ item.attendees }} / {{ item.capacity }} {{ _('going') }}</span>
+</div>
+<form method="post" action="{{ url_for('training.reserve',session_id=item.id) }}">{{ token() }}<input type="hidden" name="action" value="{{ 'cancel' if item.joined else 'join' }}">
+<button class="button small {{ 'secondary' if item.joined else 'dark' }}" {% if not item.joined and item.attendees >= item.capacity %}disabled{% endif %}>{{ _('Cancel reservation') if item.joined else (_('Full') if item.attendees >= item.capacity else _('Reserve a place')) }}</button>
+</form>
+</article>{% else %}<div class="card empty">
+<span>◷</span>
+<h3>{{ _('Your next session is ahead of you.') }}</h3>
+<p>{{ _('Join a group to see its scheduled training. Ask the owner for permission if you want to schedule sessions.') }}</p>
+<a class="button secondary small" href="{{ url_for('groups.groups') }}">{{ _('Explore groups') }}</a>
+</div>{% endfor %}</div>
+{% if eligible_groups %}<dialog id="create-dialog">
+<div class="dialog-heading">
+<h2>{{ _('Schedule training') }}</h2>
+<button class="text-button" data-close aria-label="{{ _('Close') }}">×</button>
+</div>
+<form method="post" class="entry-form">{{ token() }}<label>{{ _('Group') }}<select name="group_id" required>{% for group in eligible_groups %}<option value="{{ group.id }}">{{ group.name }}</option>{% endfor %}</select>
+</label>
+<label>{{ _('Training title') }}<input name="title" maxlength="100" required>
+</label>
+<label>{{ _('Date and time') }}<input type="datetime-local" name="starts_at" min="{{ now }}" required>
+</label>
+<div class="form-row">
+<label>{{ _('Duration (minutes)') }}<input type="number" name="minutes" min="1" max="1440" value="60" required>
+</label>
+<label>{{ _('Capacity') }}<input type="number" name="capacity" min="1" max="10000" value="12" required>
+</label>
+</div>
+<label>{{ _('Location') }}<input name="location" maxlength="160" required>
+</label>
+<label>{{ _('Training details') }}<textarea name="description" maxlength="2000" rows="3" required>
+</textarea>
+</label>
+<button class="button dark">{{ _('Schedule training') }} ↗</button>
+</form>
+</dialog>{% endif %}{% endblock %}

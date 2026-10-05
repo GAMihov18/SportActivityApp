@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><title>Stride</title><rect width="64" height="64" rx="16" fill="#204c3e" /><svg x="6" y="6" width="52" height="52" viewBox="0 0 128 128" fill="none" style="--stride-track:#d3eaa4;--stride-lane:#204c3e"><g id="stride-mark" fill="none">
+  <path d="M92 24H52C35 24 24 33 24 46S35 64 52 64H76C93 64 104 73 104 86S93 104 76 104H36" stroke="var(--stride-track, #204c3e)" stroke-width="20" stroke-linecap="round" />
+  <path d="M92 24H76" stroke="#ef865a" stroke-width="20" stroke-linecap="round" />
+  <path d="M92 24H52C35 24 24 33 24 46S35 64 52 64H76C93 64 104 73 104 86S93 104 76 104H36" stroke="var(--stride-lane, #e8eddd)" stroke-width="2.5" stroke-linecap="round" />
+  </g>
+</svg></svg>

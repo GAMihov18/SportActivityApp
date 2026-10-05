@@ -1,0 +1,34 @@
+{% extends 'base.html' %}{% from 'macros.html' import token,sport_select,group_card,filters with context %}{% block title %}{{ _('Groups') }}{% endblock %}
+{% block content %}<div class="page-heading">
+<div>
+<p class="eyebrow">{{ _('A SHARED LOVE OF MOVEMENT') }}</p>
+<h1>{{ _('Find your people') }}</h1>
+<p>{{ _('Connect with a community that moves like you.') }}</p>
+</div>{% if g.user %}<button class="button dark" data-open="create-dialog">＋ {{ _('Create a group') }}</button>{% else %}<a class="button dark" href="{{ url_for('accounts.login') }}">＋ {{ _('Create a group') }}</a>{% endif %}</div>{% if g.user %}<form class="invite-form" method="post" action="{{ url_for('groups.join_invite') }}">{{ token() }}<label for="invite-code">{{ _('Have a private group invite?') }}</label>
+<input id="invite-code" name="invite_code" maxlength="80" placeholder="{{ _('Invite code') }}" required>
+<button class="button secondary">{{ _('Join with code') }}</button>
+</form>{% endif %}{{ filters() }}<div class="card-grid">{% for group in groups %}{{ group_card(group) }}{% else %}<div class="card empty wide">
+<span>◎</span>
+<h3>{{ _('Better together.') }}</h3>
+<p>{{ _('Be the first to start a group in your community.') }}</p>
+</div>{% endfor %}</div>
+{% if g.user %}<dialog id="create-dialog">
+<div class="dialog-heading">
+<h2>{{ _('Create a group') }}</h2>
+<button class="text-button" data-close aria-label="{{ _('Close') }}">×</button>
+</div>
+<form method="post" class="entry-form">{{ token() }}<label>{{ _('Group name') }}<input name="name" maxlength="100" required>
+</label>
+<label>{{ _('Group type') }}<select name="kind">
+<option value="community">{{ _('Public community') }}</option>
+<option value="club">{{ _('Public sports club') }}</option>
+<option value="friends">{{ _('Private friend group') }}</option>
+</select>
+</label>{{ sport_select() }}<label>{{ _('Location') }}<input name="location" maxlength="160" required>
+</label>
+<label>{{ _('About your group') }}<textarea name="description" maxlength="2000" rows="4" required>
+</textarea>
+</label>
+<button class="button dark">{{ _('Create a group') }} ↗</button>
+</form>
+</dialog>{% endif %}{% endblock %}

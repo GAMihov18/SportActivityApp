@@ -1,0 +1,556 @@
+# Bulgarian translations for Stride.
+# Copyright (C) 2026 ORGANIZATION
+# This file is distributed under the same license as the Stride project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Stride 1.0\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-10-05 13:04+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: bg\n"
+"Language-Team: bg <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+msgid "Overview"
+msgstr "Преглед"
+
+msgid "Workouts"
+msgstr "Тренировки"
+
+msgid "Groups"
+msgstr "Групи"
+
+msgid "Events"
+msgstr "Събития"
+
+msgid "Training"
+msgstr "Занимания"
+
+msgid "YOUR SPACE"
+msgstr "ТВОЕТО ПРОСТРАНСТВО"
+
+msgid "Main navigation"
+msgstr "Основна навигация"
+
+msgid "Better together."
+msgstr "По-добре заедно."
+
+msgid "Find your people. Find your pace."
+msgstr "Намери своите хора. Намери своето темпо."
+
+msgid "Explore groups"
+msgstr "Разгледай групите"
+
+msgid "Community member"
+msgstr "Член на общността"
+
+msgid "Sign out"
+msgstr "Изход"
+
+msgid "Join Stride"
+msgstr "Присъедини се към Stride"
+
+msgid "Already a member? Sign in"
+msgstr "Имаш профил? Влез"
+
+msgid "A little movement. A lot of possibility."
+msgstr "Малко движение. Много възможности."
+
+msgid "Language"
+msgstr "Език"
+
+msgid "Save"
+msgstr "Запази"
+
+msgid "Make movement part of your everyday."
+msgstr "Направи движението част от ежедневието си."
+
+msgid "YOUR DAILY DOSE OF MOVEMENT"
+msgstr "ТВОЯТА ДНЕВНА ДОЗА ДВИЖЕНИЕ"
+
+#, python-format
+msgid "Good to see you, %(name)s."
+msgstr "Радваме се да те видим, %(name)s."
+
+msgid "Find your next stride."
+msgstr "Открий следващата си крачка."
+
+msgid "Every workout, every connection, every small win. All here."
+msgstr "Всяка тренировка, всяка връзка, всяка малка победа. Всичко е тук."
+
+msgid "Log a workout"
+msgstr "Запиши тренировка"
+
+msgid "MOVE WITH PURPOSE"
+msgstr "ДВИЖИ СЕ С ЦЕЛ"
+
+msgid "Your pace."
+msgstr "Твоето темпо."
+
+msgid "Your people."
+msgstr "Твоите хора."
+
+msgid "Your potential."
+msgstr "Твоят потенциал."
+
+msgid "Build a routine you love, with a community that keeps you going."
+msgstr "Изгради любим навик с общност, която те мотивира."
+
+msgid "Find your community"
+msgstr "Намери своята общност"
+
+msgid "Your statistics"
+msgstr "Твоята статистика"
+
+msgid "Workouts this week"
+msgstr "Тренировки тази седмица"
+
+msgid "One session at a time"
+msgstr "Една тренировка след друга"
+
+msgid "Active minutes"
+msgstr "Активни минути"
+
+msgid "Your movement this week"
+msgstr "Движението ти тази седмица"
+
+msgid "Your groups"
+msgstr "Твоите групи"
+
+msgid "Connections that count"
+msgstr "Връзки със значение"
+
+msgid "Upcoming RSVPs"
+msgstr "Предстоящи участия"
+
+msgid "Something to look forward to"
+msgstr "Нещо, което да очакваш"
+
+msgid "Recent workouts"
+msgstr "Последни тренировки"
+
+msgid "View all"
+msgstr "Виж всички"
+
+msgid "Your next chapter starts here."
+msgstr "Следващата ти глава започва тук."
+
+msgid "Log your first workout and watch your progress grow."
+msgstr "Запиши първата си тренировка и проследи напредъка си."
+
+msgid "On the horizon"
+msgstr "На хоризонта"
+
+msgid "All events"
+msgstr "Всички събития"
+
+msgid "Make something happen."
+msgstr "Създай нещо ново."
+
+msgid "Create an event and bring people together."
+msgstr "Създай събитие и събери хората."
+
+msgid "Explore events"
+msgstr "Разгледай събитията"
+
+msgid "Find your people"
+msgstr "Намери своите хора"
+
+msgid "Shared interests. New connections. More motivation."
+msgstr "Общи интереси. Нови връзки. Повече мотивация."
+
+msgid "All groups"
+msgstr "Всички групи"
+
+msgid "Be the first to start a group in your community."
+msgstr "Бъди първият, който създава група в общността си."
+
+msgid "Sport"
+msgstr "Спорт"
+
+msgid "Running"
+msgstr "Бягане"
+
+msgid "Cycling"
+msgstr "Колоездене"
+
+msgid "Strength"
+msgstr "Силови тренировки"
+
+msgid "Swimming"
+msgstr "Плуване"
+
+msgid "Yoga"
+msgstr "Йога"
+
+msgid "Football"
+msgstr "Футбол"
+
+msgid "Hiking"
+msgstr "Туризъм"
+
+msgid "members"
+msgstr "членове"
+
+msgid "Leave group"
+msgstr "Напусни"
+
+msgid "Join group"
+msgstr "Присъедини се"
+
+msgid "going"
+msgstr "участници"
+
+msgid "Cancel RSVP"
+msgstr "Откажи участие"
+
+msgid "Full"
+msgstr "Запълнено"
+
+msgid "Attend"
+msgstr "Участвай"
+
+msgid "min"
+msgstr "мин"
+
+msgid "Delete this workout?"
+msgstr "Да изтрием ли тренировката?"
+
+msgid "Delete workout"
+msgstr "Изтрий тренировката"
+
+msgid "Search by name or location…"
+msgstr "Търси по име или място…"
+
+msgid "Search"
+msgstr "Търсене"
+
+msgid "Filter by sport"
+msgstr "Филтър по спорт"
+
+msgid "All sports"
+msgstr "Всички спортове"
+
+msgid "No matches. Try another search."
+msgstr "Няма съвпадения. Опитай друго търсене."
+
+msgid "BUILD YOUR MOMENTUM"
+msgstr "ИЗГРАДИ СВОЯ РИТЪМ"
+
+msgid "Your workouts"
+msgstr "Твоите тренировки"
+
+msgid "Small steps add up. Keep a record of yours."
+msgstr "Малките стъпки се натрупват. Записвай своите."
+
+msgid "Workout title"
+msgstr "Име на тренировката"
+
+msgid "Duration (minutes)"
+msgstr "Продължителност (минути)"
+
+msgid "Date"
+msgstr "Дата"
+
+msgid "Notes (optional)"
+msgstr "Бележки (по желание)"
+
+msgid "Save workout"
+msgstr "Запази тренировката"
+
+msgid "Close"
+msgstr "Затвори"
+
+msgid "A SHARED LOVE OF MOVEMENT"
+msgstr "СПОДЕЛЕНА ЛЮБОВ КЪМ ДВИЖЕНИЕТО"
+
+msgid "Connect with a community that moves like you."
+msgstr "Свържи се с общност, която се движи като теб."
+
+msgid "Create a group"
+msgstr "Създай група"
+
+msgid "Group name"
+msgstr "Име на групата"
+
+msgid "Location"
+msgstr "Място"
+
+msgid "About your group"
+msgstr "За групата"
+
+msgid "Group type"
+msgstr "Тип група"
+
+msgid "Public community"
+msgstr "Публична общност"
+
+msgid "Public sports club"
+msgstr "Публичен спортен клуб"
+
+msgid "Private friend group"
+msgstr "Частна приятелска група"
+
+msgid "Private friends"
+msgstr "Частна група"
+
+msgid "Club"
+msgstr "Клуб"
+
+msgid "Community"
+msgstr "Общност"
+
+msgid "Have a private group invite?"
+msgstr "Имаш покана за частна група?"
+
+msgid "Invite code"
+msgstr "Код за покана"
+
+msgid "Join with code"
+msgstr "Влез с код"
+
+msgid "PUT SOMETHING GOOD ON YOUR CALENDAR"
+msgstr "ПЛАНИРАЙ НЕЩО ХУБАВО"
+
+msgid "Upcoming events"
+msgstr "Предстоящи събития"
+
+msgid "Show up, try something new, and move together."
+msgstr "Ела, опитай нещо ново и се движи с нас."
+
+msgid "Create an event"
+msgstr "Създай събитие"
+
+msgid "Event title"
+msgstr "Име на събитието"
+
+msgid "Date and time"
+msgstr "Дата и час"
+
+msgid "Capacity"
+msgstr "Брой места"
+
+msgid "Event details"
+msgstr "Подробности за събитието"
+
+msgid "Event times use the organiser’s local time. Confirm the time zone with them when travelling."
+msgstr "Часовете са в местното време на организатора. При пътуване уточни часовата зона с него."
+
+msgid "Create an account"
+msgstr "Създай профил"
+
+msgid "Sign in"
+msgstr "Вход"
+
+msgid "WELCOME TO STRIDE"
+msgstr "ДОБРЕ ДОШЪЛ В STRIDE"
+
+msgid "A fresh start."
+msgstr "Ново начало."
+
+msgid "Welcome back."
+msgstr "Добре дошъл отново."
+
+msgid "Your next workout. Your new community. It all starts here."
+msgstr "Следващата ти тренировка. Новата ти общност. Всичко започва тук."
+
+msgid "Your name"
+msgstr "Твоето име"
+
+msgid "Email"
+msgstr "Имейл"
+
+msgid "Password"
+msgstr "Парола"
+
+msgid "At least 8 characters."
+msgstr "Поне 8 символа."
+
+msgid "Already a member?"
+msgstr "Имаш профил?"
+
+msgid "New here?"
+msgstr "Нов си тук?"
+
+msgid "We could not complete that request."
+msgstr "Не успяхме да изпълним заявката."
+
+msgid "Refresh the page and try again."
+msgstr "Обнови страницата и опитай отново."
+
+msgid "Back to overview"
+msgstr "Към прегледа"
+
+msgid "Group training"
+msgstr "Групови занимания"
+
+msgid "Invite your friends"
+msgstr "Покани приятели"
+
+msgid "Share this code with someone you want to join your group."
+msgstr "Сподели кода с човек, когото искаш да поканиш в групата."
+
+msgid "Members and permissions"
+msgstr "Членове и права"
+
+msgid "The owner can give members permission to schedule group training."
+msgstr "Собственикът може да дава права на членовете да планират групови занимания."
+
+msgid "Owner"
+msgstr "Собственик"
+
+msgid "Can schedule training"
+msgstr "Може да планира занимания"
+
+msgid "Member"
+msgstr "Член"
+
+msgid "Revoke scheduling"
+msgstr "Отнеми право"
+
+msgid "Allow scheduling"
+msgstr "Разреши планиране"
+
+msgid "MAKE TIME FOR PROGRESS"
+msgstr "ОТДЕЛИ ВРЕМЕ ЗА НАПРЕДЪК"
+
+msgid "Scheduled training"
+msgstr "Планирани занимания"
+
+msgid "Training sessions for your groups. Reserve your next session."
+msgstr "Занимания за твоите групи. Запази място за следващото."
+
+msgid "Schedule training"
+msgstr "Планирай занимание"
+
+msgid "Session times use the group’s local time. Confirm the time zone with your group."
+msgstr "Часовете са в местното време на групата. Уточни часовата зона с нея."
+
+msgid "Cancel reservation"
+msgstr "Откажи резервация"
+
+msgid "Reserve a place"
+msgstr "Запази място"
+
+msgid "Your next session is ahead of you."
+msgstr "Следващото ти занимание предстои."
+
+msgid ""
+"Join a group to see its scheduled training. Ask the owner for permission if you want to schedule "
+"sessions."
+msgstr ""
+"Присъедини се към група, за да видиш заниманията ѝ. Поискай права от собственика, ако искаш да "
+"планираш занимания."
+
+msgid "Group"
+msgstr "Група"
+
+msgid "Training title"
+msgstr "Име на заниманието"
+
+msgid "Training details"
+msgstr "Подробности за заниманието"
+
+msgid "Sign in to continue."
+msgstr "Влез, за да продължиш."
+
+msgid "Please fill in all fields within their length limits."
+msgstr "Попълни всички полета в рамките на ограничението за дължина."
+
+msgid "Choose a valid sport."
+msgstr "Избери валиден спорт."
+
+msgid "Enter a valid positive number."
+msgstr "Въведи валидно положително число."
+
+msgid "Use a valid email and a password with at least 8 characters."
+msgstr "Използвай валиден имейл и парола с поне 8 символа."
+
+msgid "This email is already registered."
+msgstr "Този имейл вече е регистриран."
+
+msgid "Email or password is incorrect."
+msgstr "Имейлът или паролата са грешни."
+
+msgid "Workout dates cannot be in the future."
+msgstr "Датата на завършена тренировка не може да е в бъдещето."
+
+msgid "Notes must be under 2000 characters."
+msgstr "Бележките трябва да са до 2000 символа."
+
+msgid "Workout saved. Keep it up!"
+msgstr "Тренировката е запазена. Продължавай така!"
+
+msgid "Workout deleted."
+msgstr "Тренировката е изтрита."
+
+msgid "Choose a valid group type."
+msgstr "Избери валиден тип група."
+
+msgid "Your group is ready."
+msgstr "Групата ти е готова."
+
+msgid "That invite code is not valid."
+msgstr "Кодът за покана е невалиден."
+
+msgid "Welcome to the group!"
+msgstr "Добре дошъл в групата!"
+
+msgid "Group owners must remain members to manage the group."
+msgstr "Собствениците трябва да останат членове, за да управляват групата."
+
+msgid "You left the group."
+msgstr "Напусна групата."
+
+msgid "Scheduling permission updated."
+msgstr "Правото за планиране е обновено."
+
+msgid "Choose a future local date and time."
+msgstr "Избери бъдеща дата и час в местното време."
+
+msgid "Event created. Invite your community!"
+msgstr "Събитието е създадено. Покани общността си!"
+
+msgid "Your RSVP was cancelled."
+msgstr "Участието ти е отменено."
+
+msgid "This event has already started."
+msgstr "Събитието вече е започнало."
+
+msgid "You are already going."
+msgstr "Вече си записан."
+
+msgid "This event is full."
+msgstr "Няма свободни места за събитието."
+
+msgid "You are on the list. See you there!"
+msgstr "В списъка си. Ще се видим там!"
+
+msgid "Training session scheduled."
+msgstr "Заниманието е планирано."
+
+msgid "Reservation cancelled."
+msgstr "Резервацията е отменена."
+
+msgid "This session has already started."
+msgstr "Заниманието вече е започнало."
+
+msgid "This session is full."
+msgstr "Няма свободни места за заниманието."
+
+msgid "Your training place is reserved."
+msgstr "Мястото ти за заниманието е запазено."
+
+msgid "Enter a valid date."
+msgstr "Въведи валидна дата."
+
+msgid "Enter a valid date and time."
+msgstr "Въведи валидни дата и час."
+

@@ -1,0 +1,99 @@
+{% extends 'base.html' %}{% from 'macros.html' import group_card,event_card,workout_row with context %}
+{% block content %}
+<div class="page-heading">
+<div>
+<p class="eyebrow">{{ _('YOUR DAILY DOSE OF MOVEMENT') }}</p>
+<h1>{% if g.user %}{{ _('Good to see you, %(name)s.', name=g.user.name.split()[0]) }}{% else %}{{ _('Find your next stride.') }}{% endif %}</h1>
+<p>{{ _('Every workout, every connection, every small win. All here.') }}</p>
+</div>
+<a class="button dark" href="{{ url_for('workouts.workouts') }}">＋ {{ _('Log a workout') }}</a>
+</div>
+<section class="hero">
+<div class="hero-copy">
+<span class="hero-label">{{ _('MOVE WITH PURPOSE') }}</span>
+<h2>{{ _('Your pace.') }}<br>{{ _('Your people.') }}<br>
+<em>{{ _('Your potential.') }}</em>
+</h2>
+<p>{{ _('Build a routine you love, with a community that keeps you going.') }}</p>
+<a class="button light" href="{{ url_for('groups.groups') }}">{{ _('Find your community') }} ↗</a>
+</div>
+<div class="hero-art" aria-hidden="true">
+<div class="orbit orbit-one">
+</div>
+<div class="orbit orbit-two">
+</div>
+<div class="orbit orbit-three">
+</div>
+<svg class="art-logo" viewBox="0 0 128 128" focusable="false">
+<use href="{{ url_for('static', filename='stride-emblem.svg') }}#stride-mark"/>
+</svg>
+<span class="art-caption">ONE STEP<br>AT A TIME.</span>
+<span class="art-star">✳</span>
+</div>
+</section>
+<section class="stats" aria-label="{{ _('Your statistics') }}">
+<div class="stat">
+<span>{{ _('Workouts this week') }}</span>
+<strong>{{ weekly.count }}<i>↗</i>
+</strong>
+<small>{{ _('One session at a time') }}</small>
+</div>
+<div class="stat">
+<span>{{ _('Active minutes') }}</span>
+<strong>{{ weekly.minutes }}<i>◷</i>
+</strong>
+<small>{{ _('Your movement this week') }}</small>
+</div>
+<div class="stat">
+<span>{{ _('Your groups') }}</span>
+<strong>{{ membership_count }}<i>◎</i>
+</strong>
+<small>{{ _('Connections that count') }}</small>
+</div>
+<div class="stat">
+<span>{{ _('Upcoming RSVPs') }}</span>
+<strong>{{ rsvp_count }}<i>▦</i>
+</strong>
+<small>{{ _('Something to look forward to') }}</small>
+</div>
+</section>
+<div class="dashboard-columns">
+<section>
+<div class="section-heading">
+<h2>{{ _('Recent workouts') }}</h2>
+<a href="{{ url_for('workouts.workouts') }}">{{ _('View all') }} →</a>
+</div>
+<div class="card workout-list">{% for activity in activities %}{{ workout_row(activity) }}{% else %}<div class="empty">
+<span>↗</span>
+<h3>{{ _('Your next chapter starts here.') }}</h3>
+<p>{{ _('Log your first workout and watch your progress grow.') }}</p>
+<a class="button secondary small" href="{{ url_for('workouts.workouts') }}">{{ _('Log a workout') }}</a>
+</div>{% endfor %}</div>
+</section>
+<section>
+<div class="section-heading">
+<h2>{{ _('On the horizon') }}</h2>
+<a href="{{ url_for('events.events') }}">{{ _('All events') }} →</a>
+</div>
+<div class="event-stack">{% for event in events %}{{ event_card(event) }}{% else %}<div class="card empty">
+<span>▦</span>
+<h3>{{ _('Make something happen.') }}</h3>
+<p>{{ _('Create an event and bring people together.') }}</p>
+<a class="button secondary small" href="{{ url_for('events.events') }}">{{ _('Explore events') }}</a>
+</div>{% endfor %}</div>
+</section>
+</div>
+<section>
+<div class="section-heading">
+<div>
+<h2>{{ _('Find your people') }}</h2>
+<p>{{ _('Shared interests. New connections. More motivation.') }}</p>
+</div>
+<a href="{{ url_for('groups.groups') }}">{{ _('All groups') }} →</a>
+</div>
+<div class="card-grid">{% for group in groups %}{{ group_card(group) }}{% else %}<div class="card empty wide">
+<p>{{ _('Be the first to start a group in your community.') }}</p>
+<a href="{{ url_for('groups.groups') }}" class="button secondary small">{{ _('Explore groups') }} ↗</a>
+</div>{% endfor %}</div>
+</section>
+{% endblock %}

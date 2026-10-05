@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="{{ language }}">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{{ _('Overview') }}{% endblock %} · Stride</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="icon" href="{{ url_for('static', filename='favicon.svg', v='track') }}" type="image/svg+xml">
+  <script src="{{ url_for('static', filename='app.js') }}" defer>
+</script>
+</head>
+<body>
+<aside class="sidebar">
+  <a class="brand" href="{{ url_for('dashboard.dashboard') }}">
+<span class="brand-mark"><svg viewBox="0 0 128 128" aria-hidden="true" focusable="false"><use href="{{ url_for('static', filename='stride-emblem.svg') }}#stride-mark"/></svg>
+</span>stride<span class="brand-dot">.</span>
+</a>
+  <p class="nav-label">{{ _('YOUR SPACE') }}</p>
+  <nav aria-label="{{ _('Main navigation') }}">
+    {% for endpoint, icon, label in [('dashboard.dashboard','◫',_('Overview')),('workouts.workouts','↗',_('Workouts')),('training.training','◷',_('Training')),('groups.groups','◎',_('Groups')),('events.events','▦',_('Events'))] %}
+    <a href="{{ url_for(endpoint) }}" class="nav-link {{ 'active' if request.endpoint == endpoint }}" {% if request.endpoint == endpoint %}aria-current="page"{% endif %}>
+<span>{{ icon }}</span>{{ label }}{% if request.endpoint == endpoint %}<i>
+</i>{% endif %}</a>
+    {% endfor %}
+  </nav>
+  <div class="sidebar-note">
+<span>✦</span>
+<h3>{{ _('Better together.') }}</h3>
+<p>{{ _('Find your people. Find your pace.') }}</p>
+<a href="{{ url_for('groups.groups') }}">{{ _('Explore groups') }} →</a>
+</div>
+  <div class="sidebar-bottom">
+    {% if g.user %}<div class="profile">
+<span class="avatar">{{ g.user.name[0]|upper }}</span>
+<div>
+<strong>{{ g.user.name }}</strong>
+<small>{{ _('Community member') }}</small>
+</div>
+</div>
+<form method="post" action="{{ url_for('accounts.logout') }}">
+<input type="hidden" name="csrf" value="{{ csrf }}">
+<button class="text-button">{{ _('Sign out') }}</button>
+</form>
+    {% else %}<a class="button dark" href="{{ url_for('accounts.register') }}">{{ _('Join Stride') }} ↗</a>
+<a class="sign-in" href="{{ url_for('accounts.login') }}">{{ _('Already a member? Sign in') }}</a>{% endif %}
+  </div>
+</aside>
+<div class="workspace">
+  <header class="topbar">
+<div class="mobile-account">{% if g.user %}<span>{{ g.user.name }}</span>
+<form method="post" action="{{ url_for('accounts.logout') }}">
+<input type="hidden" name="csrf" value="{{ csrf }}">
+<button class="text-button">{{ _('Sign out') }}</button>
+</form>{% else %}<a href="{{ url_for('accounts.login') }}">{{ _('Sign in') }}</a>
+<a href="{{ url_for('accounts.register') }}">{{ _('Join Stride') }}</a>{% endif %}</div>
+<span>{{ _('A little movement. A lot of possibility.') }}</span>
+<form class="language" method="post" action="{{ url_for('i18n.change_language') }}">
+<input type="hidden" name="csrf" value="{{ csrf }}">
+<input type="hidden" name="next" value="{{ request.path }}">
+<label for="language">◎ <span class="sr-only">{{ _('Language') }}</span>
+</label>
+<select id="language" name="language" onchange="this.form.submit()">
+<option value="en" {{ 'selected' if language == 'en' }}>English</option>
+<option value="bg" {{ 'selected' if language == 'bg' }}>Български</option>
+</select>
+<noscript>
+<button>{{ _('Save') }}</button>
+</noscript>
+</form>
+</header>
+  <main>
+    {% for category, message in get_flashed_messages(with_categories=true) %}<div class="flash {{ category }}" role="status">{{ message }}</div>{% endfor %}
+    {% block content %}{% endblock %}
+  </main>
+  <footer>STRIDE <span>•</span> {{ _('Make movement part of your everyday.') }}</footer>
+</div>
+</body>
+</html>
