@@ -16,10 +16,12 @@
 <p class="location">⌖ {{ item.location }} · {{ item.starts_at[11:16] }} · {{ item.minutes }} {{ _('min') }}</p>
 <p class="description">{{ item.description }}</p>
 <span class="attendees">{{ item.attendees }} / {{ item.capacity }} {{ _('going') }}</span>
+<span class="tag">{{ _('Public on profile') if item.public else _('Private on profile') }}{% if item.series_id %} · {{ _('Weekly series') }}{% endif %}</span>
 </div>
 <form method="post" action="{{ url_for('training.reserve',session_id=item.id) }}">{{ token() }}<input type="hidden" name="action" value="{{ 'cancel' if item.joined else 'join' }}">
 <button class="button small {{ 'secondary' if item.joined else 'dark' }}" {% if not item.joined and item.attendees >= item.capacity %}disabled{% endif %}>{{ _('Cancel reservation') if item.joined else (_('Full') if item.attendees >= item.capacity else _('Reserve a place')) }}</button>
 </form>
+{% if item.id in manageable %}<div class="schedule-actions"><a class="button secondary small" href="{{ url_for('training.edit',session_id=item.id) }}">{{ _('Edit training') }}</a><form method="post" action="{{ url_for('training.cancel',session_id=item.id) }}" data-confirm="{{ _('Cancel this session and its reservations?') }}">{{ token() }}<button class="button secondary small">{{ _('Cancel session') }}</button></form>{% if item.series_id %}<form method="post" action="{{ url_for('training.cancel',session_id=item.id) }}" data-confirm="{{ _('Cancel all upcoming sessions in this series?') }}">{{ token() }}<button class="button secondary small" name="scope" value="series">{{ _('Cancel upcoming series') }}</button></form>{% endif %}</div>{% endif %}
 </article>{% else %}<div class="card empty">
 <span>◷</span>
 <h3>{{ _('Your next session is ahead of you.') }}</h3>
@@ -48,6 +50,9 @@
 <label>{{ _('Training details') }}<textarea name="description" maxlength="2000" rows="3" required>
 </textarea>
 </label>
+<div class="form-row"><label>{{ _('Repeat') }}<select name="repeat"><option value="once">{{ _('Once') }}</option><option value="weekly">{{ _('Weekly') }}</option></select></label><label>{{ _('Number of sessions') }}<input name="occurrences" type="number" min="1" max="52" value="4" required></label></div>
+<label>{{ _('Profile visibility') }}<select name="visibility"><option value="private">{{ _('Private') }}</option><option value="public">{{ _('Public') }}</option></select></label>
+<p class="muted">{{ _('Reservations are separate for each occurrence. Private group training is shown only to group members.') }}</p>
 <button class="button dark">{{ _('Schedule training') }} ↗</button>
 </form>
 </dialog>{% endif %}{% endblock %}

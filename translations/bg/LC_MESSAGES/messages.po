@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Stride 1.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-10-05 13:04+0300\n"
+"POT-Creation-Date: 2026-10-07 13:31+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: bg\n"
@@ -18,539 +18,1116 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.18.0\n"
 
+#: stride/accounts.py:18
+msgid "Use a valid email and a password with at least 8 characters."
+msgstr "Използвай валиден имейл и парола с поне 8 символа."
+
+#: stride/accounts.py:27
+msgid "This email is already registered."
+msgstr "Този имейл вече е регистриран."
+
+#: stride/accounts.py:41
+msgid "Email or password is incorrect."
+msgstr "Имейлът или паролата са грешни."
+
+#: stride/core.py:13
+msgid "Sign in to continue."
+msgstr "Влез, за да продължиш."
+
+#: stride/core.py:21 stride/social.py:64
+msgid "Please fill in all fields within their length limits."
+msgstr "Попълни всички полета в рамките на ограничението за дължина."
+
+#: stride/core.py:40 stride/progress.py:62 stride/social.py:66
+msgid "Choose a valid sport."
+msgstr "Избери валиден спорт."
+
+#: stride/core.py:47 stride/core.py:49
+msgid "Enter a valid positive number."
+msgstr "Въведи валидно положително число."
+
+#: stride/core.py:57
+msgid "Enter a valid date."
+msgstr "Въведи валидна дата."
+
+#: stride/core.py:64
+msgid "Enter a valid date and time."
+msgstr "Въведи валидни дата и час."
+
+#: stride/events.py:24 stride/events.py:75 stride/training.py:22
+#: stride/training.py:100
+msgid "Choose a future local date and time."
+msgstr "Избери бъдеща дата и час в местното време."
+
+#: stride/events.py:29
+msgid "Event created. Invite your community!"
+msgstr "Събитието е създадено. Покани общността си!"
+
+#: stride/events.py:45
+msgid "Your RSVP was cancelled."
+msgstr "Участието ти е отменено."
+
+#: stride/events.py:47
+msgid "This event has already started."
+msgstr "Събитието вече е започнало."
+
+#: stride/events.py:49 stride/training.py:68
+msgid "You are already going."
+msgstr "Вече си записан."
+
+#: stride/events.py:51
+msgid "This event is full."
+msgstr "Няма свободни места за събитието."
+
+#: stride/events.py:54
+msgid "You are on the list. See you there!"
+msgstr "В списъка си. Ще се видим там!"
+
+#: stride/events.py:78 stride/training.py:107
+msgid "Capacity cannot be lower than existing reservations."
+msgstr "Капацитетът не може да е по-малък от съществуващите резервации."
+
+#: stride/events.py:82
+msgid "Event updated."
+msgstr "Събитието е обновено."
+
+#: stride/events.py:100
+msgid "Event cancelled. RSVPs have been removed."
+msgstr "Събитието е отменено. Записванията са премахнати."
+
+#: stride/groups.py:33
+msgid "Choose a valid group type."
+msgstr "Избери валиден тип група."
+
+#: stride/groups.py:40
+msgid "Your group is ready."
+msgstr "Групата ти е готова."
+
+#: stride/groups.py:53
+msgid "That invite code is not valid."
+msgstr "Кодът за покана е невалиден."
+
+#: stride/groups.py:57 stride/groups.py:77
+msgid "Welcome to the group!"
+msgstr "Добре дошъл в групата!"
+
+#: stride/groups.py:70
+msgid "Group owners must remain members to manage the group."
+msgstr "Собствениците трябва да останат членове, за да управляват групата."
+
+#: stride/groups.py:74
+msgid "You left the group."
+msgstr "Напусна групата."
+
+#: stride/groups.py:112
+msgid "Scheduling permission updated."
+msgstr "Правото за планиране е обновено."
+
+#: stride/progress.py:66
+msgid "Set at least one weekly target."
+msgstr "Задай поне една седмична цел."
+
+#: stride/progress.py:71
+msgid "Weekly goals saved."
+msgstr "Седмичните цели са запазени."
+
+#: stride/social.py:68 stride/training.py:27 stride/training.py:104
+#: stride/workouts.py:21
+msgid "Choose a valid visibility."
+msgstr "Избери валидна видимост."
+
+#: stride/social.py:74
+msgid "Profile saved."
+msgstr "Профилът е запазен."
+
+#: stride/social.py:116
+msgid "Friends list updated."
+msgstr "Списъкът с приятели е обновен."
+
+#: stride/training.py:30
+msgid "Choose a valid repeat schedule."
+msgstr "Избери валидна периодичност."
+
+#: stride/training.py:37
+msgid "Training session scheduled."
+msgstr "Заниманието е планирано."
+
+#: stride/training.py:64
+msgid "Reservation cancelled."
+msgstr "Резервацията е отменена."
+
+#: stride/training.py:66
+msgid "This session has already started."
+msgstr "Заниманието вече е започнало."
+
+#: stride/training.py:70
+msgid "This session is full."
+msgstr "Няма свободни места за заниманието."
+
+#: stride/training.py:73
+msgid "Your training place is reserved."
+msgstr "Мястото ти за заниманието е запазено."
+
+#: stride/training.py:111
+msgid "Training session updated."
+msgstr "Тренировката е обновена."
+
+#: stride/training.py:134
+msgid "Training cancelled. Reservations have been removed."
+msgstr "Тренировката е отменена. Резервациите са премахнати."
+
+#: stride/workouts.py:17
+msgid "Workout dates cannot be in the future."
+msgstr "Датата на завършена тренировка не може да е в бъдещето."
+
+#: stride/workouts.py:23
+msgid "Notes must be under 2000 characters."
+msgstr "Бележките трябва да са до 2000 символа."
+
+#: stride/workouts.py:27
+msgid "Workout saved. Keep it up!"
+msgstr "Тренировката е запазена. Продължавай така!"
+
+#: stride/workouts.py:55
+msgid "Workout deleted."
+msgstr "Тренировката е изтрита."
+
+#: templates/auth.html:1 templates/auth.html:12 templates/auth.html:17
+#: templates/auth.html:19
+msgid "Create an account"
+msgstr "Създай профил"
+
+#: templates/auth.html:1 templates/auth.html:12 templates/auth.html:17
+#: templates/auth.html:19 templates/base.html:55
+msgid "Sign in"
+msgstr "Вход"
+
+#: templates/auth.html:4
+msgid "WELCOME TO STRIDE"
+msgstr "ДОБРЕ ДОШЪЛ В STRIDE"
+
+#: templates/auth.html:5
+msgid "A fresh start."
+msgstr "Ново начало."
+
+#: templates/auth.html:5
+msgid "Welcome back."
+msgstr "Добре дошъл отново."
+
+#: templates/auth.html:6
+msgid "Your next workout. Your new community. It all starts here."
+msgstr "Следващата ти тренировка. Новата ти общност. Всичко започва тук."
+
+#: templates/auth.html:13
+msgid "Your name"
+msgstr "Твоето име"
+
+#: templates/auth.html:14
+msgid "Email"
+msgstr "Имейл"
+
+#: templates/auth.html:16
+msgid "Password"
+msgstr "Парола"
+
+#: templates/auth.html:17
+msgid "At least 8 characters."
+msgstr "Поне 8 символа."
+
+#: templates/auth.html:19
+msgid "Already a member?"
+msgstr "Имаш профил?"
+
+#: templates/auth.html:19
+msgid "New here?"
+msgstr "Нов си тук?"
+
+#: templates/base.html:6 templates/base.html:20
 msgid "Overview"
 msgstr "Преглед"
 
-msgid "Workouts"
-msgstr "Тренировки"
-
-msgid "Groups"
-msgstr "Групи"
-
-msgid "Events"
-msgstr "Събития"
-
-msgid "Training"
-msgstr "Занимания"
-
+#: templates/base.html:18
 msgid "YOUR SPACE"
 msgstr "ТВОЕТО ПРОСТРАНСТВО"
 
+#: templates/base.html:19
 msgid "Main navigation"
 msgstr "Основна навигация"
 
+#: templates/base.html:20 templates/calendar.html:5 templates/goals.html:4
+#: templates/profile.html:13 templates/workouts.html:1
+msgid "Workouts"
+msgstr "Тренировки"
+
+#: templates/base.html:20 templates/profile.html:14 templates/training.html:1
+msgid "Training"
+msgstr "Занимания"
+
+#: templates/base.html:20 templates/groups.html:1
+msgid "Groups"
+msgstr "Групи"
+
+#: templates/base.html:20 templates/events.html:1
+msgid "Events"
+msgstr "Събития"
+
+#: templates/base.html:25 templates/friends.html:1 templates/friends.html:2
+msgid "Friends"
+msgstr "Приятели"
+
+#: templates/base.html:25 templates/friends.html:2
+#: templates/profile_edit.html:3
+msgid "My profile"
+msgstr "Моят профил"
+
+#: templates/base.html:29 templates/groups.html:12
 msgid "Better together."
 msgstr "По-добре заедно."
 
+#: templates/base.html:30
 msgid "Find your people. Find your pace."
 msgstr "Намери своите хора. Намери своето темпо."
 
+#: templates/base.html:31 templates/dashboard.html:97
+#: templates/training.html:29
 msgid "Explore groups"
 msgstr "Разгледай групите"
 
+#: templates/base.html:38
 msgid "Community member"
 msgstr "Член на общността"
 
+#: templates/base.html:43 templates/base.html:54
 msgid "Sign out"
 msgstr "Изход"
 
+#: templates/base.html:45 templates/base.html:56
 msgid "Join Stride"
 msgstr "Присъедини се към Stride"
 
+#: templates/base.html:46
 msgid "Already a member? Sign in"
 msgstr "Имаш профил? Влез"
 
+#: templates/base.html:57
 msgid "A little movement. A lot of possibility."
 msgstr "Малко движение. Много възможности."
 
+#: templates/base.html:61
 msgid "Language"
 msgstr "Език"
 
+#: templates/base.html:68 templates/goals.html:14
 msgid "Save"
 msgstr "Запази"
 
+#: templates/base.html:76
 msgid "Make movement part of your everyday."
 msgstr "Направи движението част от ежедневието си."
 
+#: templates/calendar.html:2
+msgid "Exercise calendar"
+msgstr "Календар на тренировките"
+
+#: templates/calendar.html:3
+msgid "Year"
+msgstr "Година"
+
+#: templates/calendar.html:4
+msgid "View"
+msgstr "Покажи"
+
+#: templates/calendar.html:5
+msgid "Darker days mean more active minutes."
+msgstr "По-тъмните дни означават повече активни минути."
+
+#: templates/calendar.html:8
+msgid "Mon"
+msgstr "Пон"
+
+#: templates/calendar.html:8
+msgid "Tue"
+msgstr "Вт"
+
+#: templates/calendar.html:8
+msgid "Wed"
+msgstr "Ср"
+
+#: templates/calendar.html:8
+msgid "Thu"
+msgstr "Чет"
+
+#: templates/calendar.html:8
+msgid "Fri"
+msgstr "Пет"
+
+#: templates/calendar.html:8
+msgid "Sat"
+msgstr "Съб"
+
+#: templates/calendar.html:8
+msgid "Sun"
+msgstr "Нед"
+
+#: templates/calendar.html:10
+msgid "workouts"
+msgstr "тренировки"
+
+#: templates/calendar.html:10 templates/macros.html:45
+#: templates/profile.html:14 templates/training.html:16
+msgid "min"
+msgstr "мин"
+
+#: templates/calendar.html:12 templates/dashboard.html:42
+#: templates/goals.html:5
+msgid "Active minutes"
+msgstr "Активни минути"
+
+#: templates/dashboard.html:5
 msgid "YOUR DAILY DOSE OF MOVEMENT"
 msgstr "ТВОЯТА ДНЕВНА ДОЗА ДВИЖЕНИЕ"
 
+#: templates/dashboard.html:6
 #, python-format
 msgid "Good to see you, %(name)s."
 msgstr "Радваме се да те видим, %(name)s."
 
+#: templates/dashboard.html:6
 msgid "Find your next stride."
 msgstr "Открий следващата си крачка."
 
+#: templates/dashboard.html:7
 msgid "Every workout, every connection, every small win. All here."
 msgstr "Всяка тренировка, всяка връзка, всяка малка победа. Всичко е тук."
 
+#: templates/dashboard.html:9 templates/dashboard.html:71
+#: templates/workouts.html:8 templates/workouts.html:17
 msgid "Log a workout"
 msgstr "Запиши тренировка"
 
+#: templates/dashboard.html:13
 msgid "MOVE WITH PURPOSE"
 msgstr "ДВИЖИ СЕ С ЦЕЛ"
 
+#: templates/dashboard.html:14
 msgid "Your pace."
 msgstr "Твоето темпо."
 
+#: templates/dashboard.html:14
 msgid "Your people."
 msgstr "Твоите хора."
 
+#: templates/dashboard.html:15
 msgid "Your potential."
 msgstr "Твоят потенциал."
 
+#: templates/dashboard.html:17
 msgid "Build a routine you love, with a community that keeps you going."
 msgstr "Изгради любим навик с общност, която те мотивира."
 
+#: templates/dashboard.html:18
 msgid "Find your community"
 msgstr "Намери своята общност"
 
+#: templates/dashboard.html:34
 msgid "Your statistics"
 msgstr "Твоята статистика"
 
+#: templates/dashboard.html:36
 msgid "Workouts this week"
 msgstr "Тренировки тази седмица"
 
+#: templates/dashboard.html:39
 msgid "One session at a time"
 msgstr "Една тренировка след друга"
 
-msgid "Active minutes"
-msgstr "Активни минути"
-
+#: templates/dashboard.html:45
 msgid "Your movement this week"
 msgstr "Движението ти тази седмица"
 
+#: templates/dashboard.html:48
 msgid "Your groups"
 msgstr "Твоите групи"
 
+#: templates/dashboard.html:51
 msgid "Connections that count"
 msgstr "Връзки със значение"
 
+#: templates/dashboard.html:54
 msgid "Upcoming RSVPs"
 msgstr "Предстоящи участия"
 
+#: templates/dashboard.html:57
 msgid "Something to look forward to"
 msgstr "Нещо, което да очакваш"
 
+#: templates/dashboard.html:64
 msgid "Recent workouts"
 msgstr "Последни тренировки"
 
+#: templates/dashboard.html:65
 msgid "View all"
 msgstr "Виж всички"
 
+#: templates/dashboard.html:69 templates/workouts.html:12
 msgid "Your next chapter starts here."
 msgstr "Следващата ти глава започва тук."
 
+#: templates/dashboard.html:70 templates/workouts.html:13
 msgid "Log your first workout and watch your progress grow."
 msgstr "Запиши първата си тренировка и проследи напредъка си."
 
+#: templates/dashboard.html:76
 msgid "On the horizon"
 msgstr "На хоризонта"
 
+#: templates/dashboard.html:77
 msgid "All events"
 msgstr "Всички събития"
 
+#: templates/dashboard.html:81 templates/events.html:10
 msgid "Make something happen."
 msgstr "Създай нещо ново."
 
+#: templates/dashboard.html:82 templates/events.html:11
 msgid "Create an event and bring people together."
 msgstr "Създай събитие и събери хората."
 
+#: templates/dashboard.html:83
 msgid "Explore events"
 msgstr "Разгледай събитията"
 
+#: templates/dashboard.html:90 templates/groups.html:5
 msgid "Find your people"
 msgstr "Намери своите хора"
 
+#: templates/dashboard.html:91
 msgid "Shared interests. New connections. More motivation."
 msgstr "Общи интереси. Нови връзки. Повече мотивация."
 
+#: templates/dashboard.html:93 templates/group_detail.html:2
 msgid "All groups"
 msgstr "Всички групи"
 
+#: templates/dashboard.html:96 templates/groups.html:13
 msgid "Be the first to start a group in your community."
 msgstr "Бъди първият, който създава група в общността си."
 
-msgid "Sport"
-msgstr "Спорт"
-
-msgid "Running"
-msgstr "Бягане"
-
-msgid "Cycling"
-msgstr "Колоездене"
-
-msgid "Strength"
-msgstr "Силови тренировки"
-
-msgid "Swimming"
-msgstr "Плуване"
-
-msgid "Yoga"
-msgstr "Йога"
-
-msgid "Football"
-msgstr "Футбол"
-
-msgid "Hiking"
-msgstr "Туризъм"
-
-msgid "members"
-msgstr "членове"
-
-msgid "Leave group"
-msgstr "Напусни"
-
-msgid "Join group"
-msgstr "Присъедини се"
-
-msgid "going"
-msgstr "участници"
-
-msgid "Cancel RSVP"
-msgstr "Откажи участие"
-
-msgid "Full"
-msgstr "Запълнено"
-
-msgid "Attend"
-msgstr "Участвай"
-
-msgid "min"
-msgstr "мин"
-
-msgid "Delete this workout?"
-msgstr "Да изтрием ли тренировката?"
-
-msgid "Delete workout"
-msgstr "Изтрий тренировката"
-
-msgid "Search by name or location…"
-msgstr "Търси по име или място…"
-
-msgid "Search"
-msgstr "Търсене"
-
-msgid "Filter by sport"
-msgstr "Филтър по спорт"
-
-msgid "All sports"
-msgstr "Всички спортове"
-
-msgid "No matches. Try another search."
-msgstr "Няма съвпадения. Опитай друго търсене."
-
-msgid "BUILD YOUR MOMENTUM"
-msgstr "ИЗГРАДИ СВОЯ РИТЪМ"
-
-msgid "Your workouts"
-msgstr "Твоите тренировки"
-
-msgid "Small steps add up. Keep a record of yours."
-msgstr "Малките стъпки се натрупват. Записвай своите."
-
-msgid "Workout title"
-msgstr "Име на тренировката"
-
-msgid "Duration (minutes)"
-msgstr "Продължителност (минути)"
-
-msgid "Date"
-msgstr "Дата"
-
-msgid "Notes (optional)"
-msgstr "Бележки (по желание)"
-
-msgid "Save workout"
-msgstr "Запази тренировката"
-
-msgid "Close"
-msgstr "Затвори"
-
-msgid "A SHARED LOVE OF MOVEMENT"
-msgstr "СПОДЕЛЕНА ЛЮБОВ КЪМ ДВИЖЕНИЕТО"
-
-msgid "Connect with a community that moves like you."
-msgstr "Свържи се с общност, която се движи като теб."
-
-msgid "Create a group"
-msgstr "Създай група"
-
-msgid "Group name"
-msgstr "Име на групата"
-
-msgid "Location"
-msgstr "Място"
-
-msgid "About your group"
-msgstr "За групата"
-
-msgid "Group type"
-msgstr "Тип група"
-
-msgid "Public community"
-msgstr "Публична общност"
-
-msgid "Public sports club"
-msgstr "Публичен спортен клуб"
-
-msgid "Private friend group"
-msgstr "Частна приятелска група"
-
-msgid "Private friends"
-msgstr "Частна група"
-
-msgid "Club"
-msgstr "Клуб"
-
-msgid "Community"
-msgstr "Общност"
-
-msgid "Have a private group invite?"
-msgstr "Имаш покана за частна група?"
-
-msgid "Invite code"
-msgstr "Код за покана"
-
-msgid "Join with code"
-msgstr "Влез с код"
-
-msgid "PUT SOMETHING GOOD ON YOUR CALENDAR"
-msgstr "ПЛАНИРАЙ НЕЩО ХУБАВО"
-
-msgid "Upcoming events"
-msgstr "Предстоящи събития"
-
-msgid "Show up, try something new, and move together."
-msgstr "Ела, опитай нещо ново и се движи с нас."
-
-msgid "Create an event"
-msgstr "Създай събитие"
-
-msgid "Event title"
-msgstr "Име на събитието"
-
-msgid "Date and time"
-msgstr "Дата и час"
-
-msgid "Capacity"
-msgstr "Брой места"
-
-msgid "Event details"
-msgstr "Подробности за събитието"
-
-msgid "Event times use the organiser’s local time. Confirm the time zone with them when travelling."
-msgstr "Часовете са в местното време на организатора. При пътуване уточни часовата зона с него."
-
-msgid "Create an account"
-msgstr "Създай профил"
-
-msgid "Sign in"
-msgstr "Вход"
-
-msgid "WELCOME TO STRIDE"
-msgstr "ДОБРЕ ДОШЪЛ В STRIDE"
-
-msgid "A fresh start."
-msgstr "Ново начало."
-
-msgid "Welcome back."
-msgstr "Добре дошъл отново."
-
-msgid "Your next workout. Your new community. It all starts here."
-msgstr "Следващата ти тренировка. Новата ти общност. Всичко започва тук."
-
-msgid "Your name"
-msgstr "Твоето име"
-
-msgid "Email"
-msgstr "Имейл"
-
-msgid "Password"
-msgstr "Парола"
-
-msgid "At least 8 characters."
-msgstr "Поне 8 символа."
-
-msgid "Already a member?"
-msgstr "Имаш профил?"
-
-msgid "New here?"
-msgstr "Нов си тук?"
-
+#: templates/error.html:3
 msgid "We could not complete that request."
 msgstr "Не успяхме да изпълним заявката."
 
+#: templates/error.html:3
 msgid "Refresh the page and try again."
 msgstr "Обнови страницата и опитай отново."
 
+#: templates/error.html:3
 msgid "Back to overview"
 msgstr "Към прегледа"
 
+#: templates/events.html:4
+msgid "PUT SOMETHING GOOD ON YOUR CALENDAR"
+msgstr "ПЛАНИРАЙ НЕЩО ХУБАВО"
+
+#: templates/events.html:5
+msgid "Upcoming events"
+msgstr "Предстоящи събития"
+
+#: templates/events.html:6
+msgid "Show up, try something new, and move together."
+msgstr "Ела, опитай нещо ново и се движи с нас."
+
+#: templates/events.html:7 templates/events.html:15 templates/events.html:30
+msgid "Create an event"
+msgstr "Създай събитие"
+
+#: templates/events.html:7
+msgid ""
+"Event times use the organiser’s local time. Confirm the time zone with "
+"them when travelling."
+msgstr ""
+"Часовете са в местното време на организатора. При пътуване уточни "
+"часовата зона с него."
+
+#: templates/events.html:16 templates/goals.html:8 templates/groups.html:18
+#: templates/training.html:34 templates/workouts.html:18
+msgid "Close"
+msgstr "Затвори"
+
+#: templates/events.html:18
+msgid "Event title"
+msgstr "Име на събитието"
+
+#: templates/events.html:19 templates/groups.html:27
+#: templates/schedule_edit.html:7 templates/training.html:48
+msgid "Location"
+msgstr "Място"
+
+#: templates/events.html:22 templates/schedule_edit.html:8
+#: templates/training.html:40
+msgid "Date and time"
+msgstr "Дата и час"
+
+#: templates/events.html:24 templates/schedule_edit.html:11
+#: templates/training.html:45
+msgid "Capacity"
+msgstr "Брой места"
+
+#: templates/events.html:27
+msgid "Event details"
+msgstr "Подробности за събитието"
+
+#: templates/friends.html:2
+msgid "Find people and keep in touch with your training friends."
+msgstr "Намери хора и поддържай връзка с приятелите си за тренировки."
+
+#: templates/friends.html:3
+msgid "Find people"
+msgstr "Намери хора"
+
+#: templates/friends.html:3 templates/profile_edit.html:5
+msgid "Name"
+msgstr "Име"
+
+#: templates/friends.html:3 templates/macros.html:52
+msgid "Search"
+msgstr "Търсене"
+
+#: templates/friends.html:4 templates/profile.html:6
+msgid "Add friend"
+msgstr "Добави приятел"
+
+#: templates/friends.html:4
+msgid "No visible profiles found."
+msgstr "Няма намерени видими профили."
+
+#: templates/friends.html:5
+msgid "Your friends"
+msgstr "Твоите приятели"
+
+#: templates/friends.html:5
+msgid "Friend requests"
+msgstr "Заявки за приятелство"
+
+#: templates/friends.html:6
+msgid "Request sent"
+msgstr "Заявката е изпратена"
+
+#: templates/friends.html:6
+msgid "Wants to be your friend"
+msgstr "Иска да бъде твой приятел"
+
+#: templates/friends.html:7 templates/profile.html:8
+msgid "Accept request"
+msgstr "Приеми заявката"
+
+#: templates/friends.html:7 templates/profile.html:7
+msgid "Remove friend"
+msgstr "Премахни приятел"
+
+#: templates/friends.html:7
+msgid "Cancel request"
+msgstr "Отмени заявката"
+
+#: templates/friends.html:7 templates/profile.html:8
+msgid "Decline"
+msgstr "Откажи"
+
+#: templates/friends.html:8
+msgid "Nothing here yet."
+msgstr "Все още няма нищо тук."
+
+#: templates/goals.html:2 templates/goals.html:8
+msgid "Weekly goals"
+msgstr "Седмични цели"
+
+#: templates/goals.html:2
+msgid "Set goals"
+msgstr "Задай цели"
+
+#: templates/goals.html:3 templates/goals.html:10 templates/macros.html:55
+msgid "All sports"
+msgstr "Всички спортове"
+
+#: templates/goals.html:6
+msgid "Remove goals"
+msgstr "Премахни целите"
+
+#: templates/goals.html:7
+msgid "Choose weekly targets for workouts and active minutes."
+msgstr "Избери седмични цели за брой тренировки и активни минути."
+
+#: templates/goals.html:10 templates/macros.html:1
+#: templates/schedule_edit.html:6
+msgid "Sport"
+msgstr "Спорт"
+
+#: templates/goals.html:11
+msgid "Workouts per week"
+msgstr "Тренировки седмично"
+
+#: templates/goals.html:12
+msgid "Minutes per week"
+msgstr "Минути седмично"
+
+#: templates/goals.html:13
+msgid "Set either target or both. Leave a field blank to skip it."
+msgstr "Задай една цел или и двете. Остави поле празно, за да го пропуснеш."
+
+#: templates/group_detail.html:5 templates/groups.html:25
+#: templates/macros.html:13
+msgid "Private group"
+msgstr "Частна група"
+
+#: templates/group_detail.html:5 templates/macros.html:13
+msgid "Club"
+msgstr "Клуб"
+
+#: templates/group_detail.html:5 templates/macros.html:13
+msgid "Community"
+msgstr "Общност"
+
+#: templates/group_detail.html:8
 msgid "Group training"
 msgstr "Групови занимания"
 
+#: templates/group_detail.html:8 templates/group_detail.html:9
+#: templates/macros.html:17 templates/macros.html:18
+msgid "Join group"
+msgstr "Присъедини се"
+
+#: templates/group_detail.html:11 templates/groups.html:29
+msgid "About your group"
+msgstr "За групата"
+
+#: templates/group_detail.html:15
 msgid "Invite your friends"
 msgstr "Покани приятели"
 
+#: templates/group_detail.html:16
 msgid "Share this code with someone you want to join your group."
 msgstr "Сподели кода с човек, когото искаш да поканиш в групата."
 
+#: templates/group_detail.html:19
 msgid "Members and permissions"
 msgstr "Членове и права"
 
+#: templates/group_detail.html:20
 msgid "The owner can give members permission to schedule group training."
-msgstr "Собственикът може да дава права на членовете да планират групови занимания."
+msgstr ""
+"Собственикът може да дава права на членовете да планират групови "
+"занимания."
 
+#: templates/group_detail.html:24
 msgid "Owner"
 msgstr "Собственик"
 
+#: templates/group_detail.html:24
 msgid "Can schedule training"
 msgstr "Може да планира занимания"
 
+#: templates/group_detail.html:24
 msgid "Member"
 msgstr "Член"
 
+#: templates/group_detail.html:26
 msgid "Revoke scheduling"
 msgstr "Отнеми право"
 
+#: templates/group_detail.html:26
 msgid "Allow scheduling"
 msgstr "Разреши планиране"
 
+#: templates/groups.html:4
+msgid "A SHARED LOVE OF MOVEMENT"
+msgstr "СПОДЕЛЕНА ЛЮБОВ КЪМ ДВИЖЕНИЕТО"
+
+#: templates/groups.html:6
+msgid "Connect with a community that moves like you."
+msgstr "Свържи се с общност, която се движи като теб."
+
+#: templates/groups.html:7 templates/groups.html:17 templates/groups.html:32
+msgid "Create a group"
+msgstr "Създай група"
+
+#: templates/groups.html:7
+msgid "Have a private group invite?"
+msgstr "Имаш покана за частна група?"
+
+#: templates/groups.html:8
+msgid "Invite code"
+msgstr "Код за покана"
+
+#: templates/groups.html:9
+msgid "Join with code"
+msgstr "Влез с код"
+
+#: templates/groups.html:20
+msgid "Group name"
+msgstr "Име на групата"
+
+#: templates/groups.html:22
+msgid "Group type"
+msgstr "Тип група"
+
+#: templates/groups.html:23
+msgid "Public community"
+msgstr "Публична общност"
+
+#: templates/groups.html:24
+msgid "Public sports club"
+msgstr "Публичен спортен клуб"
+
+#: templates/macros.html:16
+msgid "members"
+msgstr "членове"
+
+#: templates/macros.html:17
+msgid "Leave group"
+msgstr "Напусни"
+
+#: templates/macros.html:32 templates/training.html:18
+msgid "going"
+msgstr "участници"
+
+#: templates/macros.html:35
+msgid "Cancel RSVP"
+msgstr "Откажи участие"
+
+#: templates/macros.html:35 templates/training.html:22
+msgid "Full"
+msgstr "Запълнено"
+
+#: templates/macros.html:35 templates/macros.html:36
+msgid "Attend"
+msgstr "Участвай"
+
+#: templates/macros.html:37 templates/schedule_edit.html:1
+#: templates/schedule_edit.html:2
+msgid "Edit event"
+msgstr "Редактирай събитието"
+
+#: templates/macros.html:37
+msgid "Cancel this event and all RSVPs?"
+msgstr "Да отменим ли събитието и всички записвания?"
+
+#: templates/macros.html:37
+msgid "Cancel event"
+msgstr "Отмени събитието"
+
+#: templates/macros.html:46
+msgid "Make private"
+msgstr "Направи частно"
+
+#: templates/macros.html:46
+msgid "Make public"
+msgstr "Направи публично"
+
+#: templates/macros.html:46 templates/profile.html:14
+#: templates/schedule_edit.html:10 templates/training.html:54
+#: templates/workouts.html:30
+msgid "Public"
+msgstr "Публично"
+
+#: templates/macros.html:46 templates/profile.html:14
+#: templates/schedule_edit.html:10 templates/training.html:54
+#: templates/workouts.html:30
+msgid "Private"
+msgstr "Частно"
+
+#: templates/macros.html:46
+msgid "Delete this workout?"
+msgstr "Да изтрием ли тренировката?"
+
+#: templates/macros.html:46
+msgid "Delete workout"
+msgstr "Изтрий тренировката"
+
+#: templates/macros.html:52
+msgid "Search by name or location…"
+msgstr "Търси по име или място…"
+
+#: templates/macros.html:54
+msgid "Filter by sport"
+msgstr "Филтър по спорт"
+
+#: templates/macros.html:57
+msgid "No matches. Try another search."
+msgstr "Няма съвпадения. Опитай друго търсене."
+
+#: templates/profile.html:3
+msgid "Private profile"
+msgstr "Частен профил"
+
+#: templates/profile.html:3
+msgid "Public profile"
+msgstr "Публичен профил"
+
+#: templates/profile.html:4 templates/profile_edit.html:2
+#: templates/profile_edit.html:3
+msgid "Edit profile"
+msgstr "Редактирай профила"
+
+#: templates/profile.html:9
+msgid "Cancel friend request"
+msgstr "Отмени заявката за приятелство"
+
+#: templates/profile.html:10 templates/profile_edit.html:6
+msgid "About me"
+msgstr "За мен"
+
+#: templates/profile.html:10
+msgid "No introduction yet."
+msgstr "Все още няма представяне."
+
+#: templates/profile.html:11
+msgid "Only public activities are shown here."
+msgstr "Тук се показват само публичните активности."
+
+#: templates/profile.html:13
+msgid "No workouts to display."
+msgstr "Няма тренировки за показване."
+
+#: templates/profile.html:14
+msgid "No training to display."
+msgstr "Няма планирани тренировки за показване."
+
+#: templates/profile_edit.html:7
+msgid "Pronouns"
+msgstr "Местоимения"
+
+#: templates/profile_edit.html:8
+msgid "Favorite sport"
+msgstr "Любим спорт"
+
+#: templates/profile_edit.html:8
+msgid "Not specified"
+msgstr "Не е посочено"
+
+#: templates/profile_edit.html:9 templates/schedule_edit.html:10
+#: templates/training.html:54 templates/workouts.html:30
+msgid "Profile visibility"
+msgstr "Видимост в профила"
+
+#: templates/profile_edit.html:9
+msgid "Private — shared group members only"
+msgstr "Частен — само за членове на обща група"
+
+#: templates/profile_edit.html:9
+msgid "Public — anyone can view"
+msgstr "Публичен — видим за всички"
+
+#: templates/profile_edit.html:10
+msgid ""
+"Only activities you mark public are shown to other people. Friends do not"
+" override profile privacy."
+msgstr ""
+"Другите виждат само активностите, отбелязани като публични. Приятелството"
+" не променя поверителността на профила."
+
+#: templates/profile_edit.html:11
+msgid "Save profile"
+msgstr "Запази профила"
+
+#: templates/schedule_edit.html:1 templates/schedule_edit.html:2
+#: templates/training.html:24
+msgid "Edit training"
+msgstr "Редактирай тренировката"
+
+#: templates/schedule_edit.html:2
+msgid "Back"
+msgstr "Назад"
+
+#: templates/schedule_edit.html:3
+msgid "Changes apply to this occurrence only. Existing reservations are kept."
+msgstr ""
+"Промените важат само за тази тренировка. Съществуващите резервации се "
+"запазват."
+
+#: templates/schedule_edit.html:5
+msgid "Title"
+msgstr "Заглавие"
+
+#: templates/schedule_edit.html:9 templates/training.html:43
+#: templates/workouts.html:22
+msgid "Duration (minutes)"
+msgstr "Продължителност (минути)"
+
+#: templates/schedule_edit.html:12
+msgid "Description"
+msgstr "Описание"
+
+#: templates/schedule_edit.html:13
+msgid "Save changes"
+msgstr "Запази промените"
+
+#: templates/training.html:4
 msgid "MAKE TIME FOR PROGRESS"
 msgstr "ОТДЕЛИ ВРЕМЕ ЗА НАПРЕДЪК"
 
+#: templates/training.html:5
 msgid "Scheduled training"
 msgstr "Планирани занимания"
 
+#: templates/training.html:6
 msgid "Training sessions for your groups. Reserve your next session."
 msgstr "Занимания за твоите групи. Запази място за следващото."
 
+#: templates/training.html:7 templates/training.html:33
+#: templates/training.html:56
 msgid "Schedule training"
 msgstr "Планирай занимание"
 
-msgid "Session times use the group’s local time. Confirm the time zone with your group."
+#: templates/training.html:7
+msgid ""
+"Session times use the group’s local time. Confirm the time zone with your"
+" group."
 msgstr "Часовете са в местното време на групата. Уточни часовата зона с нея."
 
+#: templates/training.html:19
+msgid "Public on profile"
+msgstr "Публична в профила"
+
+#: templates/training.html:19
+msgid "Private on profile"
+msgstr "Частна в профила"
+
+#: templates/training.html:19
+msgid "Weekly series"
+msgstr "Седмична поредица"
+
+#: templates/training.html:22
 msgid "Cancel reservation"
 msgstr "Откажи резервация"
 
+#: templates/training.html:22
 msgid "Reserve a place"
 msgstr "Запази място"
 
+#: templates/training.html:24
+msgid "Cancel this session and its reservations?"
+msgstr "Да отменим ли тренировката и резервациите за нея?"
+
+#: templates/training.html:24
+msgid "Cancel session"
+msgstr "Отмени тренировката"
+
+#: templates/training.html:24
+msgid "Cancel all upcoming sessions in this series?"
+msgstr "Да отменим ли всички предстоящи тренировки в тази поредица?"
+
+#: templates/training.html:24
+msgid "Cancel upcoming series"
+msgstr "Отмени предстоящата поредица"
+
+#: templates/training.html:27
 msgid "Your next session is ahead of you."
 msgstr "Следващото ти занимание предстои."
 
+#: templates/training.html:28
 msgid ""
-"Join a group to see its scheduled training. Ask the owner for permission if you want to schedule "
-"sessions."
+"Join a group to see its scheduled training. Ask the owner for permission "
+"if you want to schedule sessions."
 msgstr ""
-"Присъедини се към група, за да видиш заниманията ѝ. Поискай права от собственика, ако искаш да "
-"планираш занимания."
+"Присъедини се към група, за да видиш заниманията ѝ. Поискай права от "
+"собственика, ако искаш да планираш занимания."
 
+#: templates/training.html:36
 msgid "Group"
 msgstr "Група"
 
+#: templates/training.html:38
 msgid "Training title"
 msgstr "Име на заниманието"
 
+#: templates/training.html:50
 msgid "Training details"
 msgstr "Подробности за заниманието"
 
-msgid "Sign in to continue."
-msgstr "Влез, за да продължиш."
+#: templates/training.html:53
+msgid "Repeat"
+msgstr "Повтаряне"
 
-msgid "Please fill in all fields within their length limits."
-msgstr "Попълни всички полета в рамките на ограничението за дължина."
+#: templates/training.html:53
+msgid "Once"
+msgstr "Еднократно"
 
-msgid "Choose a valid sport."
-msgstr "Избери валиден спорт."
+#: templates/training.html:53
+msgid "Weekly"
+msgstr "Всяка седмица"
 
-msgid "Enter a valid positive number."
-msgstr "Въведи валидно положително число."
+#: templates/training.html:53
+msgid "Number of sessions"
+msgstr "Брой тренировки"
 
-msgid "Use a valid email and a password with at least 8 characters."
-msgstr "Използвай валиден имейл и парола с поне 8 символа."
+#: templates/training.html:55
+msgid ""
+"Reservations are separate for each occurrence. Private group training is "
+"shown only to group members."
+msgstr ""
+"Резервациите са отделни за всяка тренировка. Тренировките на частни групи"
+" се показват само на членове на групата."
 
-msgid "This email is already registered."
-msgstr "Този имейл вече е регистриран."
+#: templates/workouts.html:4
+msgid "BUILD YOUR MOMENTUM"
+msgstr "ИЗГРАДИ СВОЯ РИТЪМ"
 
-msgid "Email or password is incorrect."
-msgstr "Имейлът или паролата са грешни."
+#: templates/workouts.html:5
+msgid "Your workouts"
+msgstr "Твоите тренировки"
 
-msgid "Workout dates cannot be in the future."
-msgstr "Датата на завършена тренировка не може да е в бъдещето."
+#: templates/workouts.html:6
+msgid "Small steps add up. Keep a record of yours."
+msgstr "Малките стъпки се натрупват. Записвай своите."
 
-msgid "Notes must be under 2000 characters."
-msgstr "Бележките трябва да са до 2000 символа."
+#: templates/workouts.html:20
+msgid "Workout title"
+msgstr "Име на тренировката"
 
-msgid "Workout saved. Keep it up!"
-msgstr "Тренировката е запазена. Продължавай така!"
+#: templates/workouts.html:24
+msgid "Date"
+msgstr "Дата"
 
-msgid "Workout deleted."
-msgstr "Тренировката е изтрита."
+#: templates/workouts.html:27
+msgid "Notes (optional)"
+msgstr "Бележки (по желание)"
 
-msgid "Choose a valid group type."
-msgstr "Избери валиден тип група."
+#: templates/workouts.html:31
+msgid ""
+"Public workouts appear on your profile. Private workouts are visible only"
+" to you."
+msgstr ""
+"Публичните тренировки се показват в профила ти. Частните тренировки са "
+"видими само за теб."
 
-msgid "Your group is ready."
-msgstr "Групата ти е готова."
+#: templates/workouts.html:32
+msgid "Save workout"
+msgstr "Запази тренировката"
 
-msgid "That invite code is not valid."
-msgstr "Кодът за покана е невалиден."
+#~ msgid "Running"
+#~ msgstr "Бягане"
 
-msgid "Welcome to the group!"
-msgstr "Добре дошъл в групата!"
+#~ msgid "Cycling"
+#~ msgstr "Колоездене"
 
-msgid "Group owners must remain members to manage the group."
-msgstr "Собствениците трябва да останат членове, за да управляват групата."
+#~ msgid "Strength"
+#~ msgstr "Силови тренировки"
 
-msgid "You left the group."
-msgstr "Напусна групата."
+#~ msgid "Swimming"
+#~ msgstr "Плуване"
 
-msgid "Scheduling permission updated."
-msgstr "Правото за планиране е обновено."
+#~ msgid "Yoga"
+#~ msgstr "Йога"
 
-msgid "Choose a future local date and time."
-msgstr "Избери бъдеща дата и час в местното време."
+#~ msgid "Football"
+#~ msgstr "Футбол"
 
-msgid "Event created. Invite your community!"
-msgstr "Събитието е създадено. Покани общността си!"
+#~ msgid "Hiking"
+#~ msgstr "Туризъм"
 
-msgid "Your RSVP was cancelled."
-msgstr "Участието ти е отменено."
+#~ msgid "Private friend group"
+#~ msgstr "Частна приятелска група"
 
-msgid "This event has already started."
-msgstr "Събитието вече е започнало."
-
-msgid "You are already going."
-msgstr "Вече си записан."
-
-msgid "This event is full."
-msgstr "Няма свободни места за събитието."
-
-msgid "You are on the list. See you there!"
-msgstr "В списъка си. Ще се видим там!"
-
-msgid "Training session scheduled."
-msgstr "Заниманието е планирано."
-
-msgid "Reservation cancelled."
-msgstr "Резервацията е отменена."
-
-msgid "This session has already started."
-msgstr "Заниманието вече е започнало."
-
-msgid "This session is full."
-msgstr "Няма свободни места за заниманието."
-
-msgid "Your training place is reserved."
-msgstr "Мястото ти за заниманието е запазено."
-
-msgid "Enter a valid date."
-msgstr "Въведи валидна дата."
-
-msgid "Enter a valid date and time."
-msgstr "Въведи валидни дата и час."
+#~ msgid "Private friends"
+#~ msgstr "Частна група"
 

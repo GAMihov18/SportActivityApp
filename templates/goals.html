@@ -1,0 +1,14 @@
+{% from 'macros.html' import token with context %}
+<section class="card detail-panel"><div class="section-heading"><h2>{{ _('Weekly goals') }}</h2><button class="button secondary small" data-open="goal-dialog">{{ _('Set goals') }}</button></div>
+{% if progress %}<p>{{ _(progress.goal.sport) if progress.goal.sport else _('All sports') }}</p>
+{% if progress.goal.workouts %}<label>{{ _('Workouts') }}: {{ progress.totals.workouts }} / {{ progress.goal.workouts }}<progress max="100" value="{{ progress.workout_percent }}">{{ progress.workout_percent }}%</progress></label>{% endif %}
+{% if progress.goal.minutes %}<label>{{ _('Active minutes') }}: {{ progress.totals.minutes }} / {{ progress.goal.minutes }}<progress max="100" value="{{ progress.minute_percent }}">{{ progress.minute_percent }}%</progress></label>{% endif %}
+<form method="post" action="{{ url_for('progress.save_goal') }}">{{ token() }}<input type="hidden" name="action" value="remove"><button class="text-button">{{ _('Remove goals') }}</button></form>
+{% else %}<p class="muted">{{ _('Choose weekly targets for workouts and active minutes.') }}</p>{% endif %}</section>
+<dialog id="goal-dialog"><div class="dialog-heading"><h2>{{ _('Weekly goals') }}</h2><button class="text-button" data-close aria-label="{{ _('Close') }}">×</button></div>
+<form method="post" action="{{ url_for('progress.save_goal') }}" class="entry-form">{{ token() }}
+<label>{{ _('Sport') }}<select name="sport"><option value="">{{ _('All sports') }}</option>{% for sport in sports %}<option value="{{ sport }}" {{ 'selected' if progress and progress.goal.sport==sport }}>{{ _(sport) }}</option>{% endfor %}</select></label>
+<label>{{ _('Workouts per week') }}<input name="workouts" type="number" min="1" max="100" value="{{ (progress.goal.workouts or '') if progress else 3 }}"></label>
+<label>{{ _('Minutes per week') }}<input name="minutes" type="number" min="1" max="10080" value="{{ (progress.goal.minutes or '') if progress else 150 }}"></label>
+<p class="muted">{{ _('Set either target or both. Leave a field blank to skip it.') }}</p>
+<button class="button dark">{{ _('Save') }}</button></form></dialog>

@@ -1,0 +1,13 @@
+<section class="card detail-panel activity-calendar">
+<div class="section-heading"><h2>{{ _('Exercise calendar') }}</h2>
+<form method="get" class="calendar-year"><label for="calendar-year">{{ _('Year') }}</label>
+<input id="calendar-year" name="year" type="number" min="1900" max="2100" value="{{ calendar.year }}" required><button class="button secondary small">{{ _('View') }}</button></form></div>
+<p class="muted">{{ _('Workouts') }}: {{ calendar.total }} · {{ _('Darker days mean more active minutes.') }}</p>
+<div class="calendar-months">{% for month in calendar.months %}<div class="calendar-month">
+<h3>{{ month.date|local_date('MMMM') }}</h3>
+<div class="calendar-grid">{% for label in [_('Mon'),_('Tue'),_('Wed'),_('Thu'),_('Fri'),_('Sat'),_('Sun')] %}<span class="calendar-weekday">{{ label }}</span>{% endfor %}
+{% for week in month.weeks %}{% for cell in week %}{% if cell.outside %}<span></span>{% else %}
+<span class="calendar-day level-{{ cell.level }}" tabindex="0" title="{{ cell.date }} · {{ cell.count }} {{ _('workouts') }} · {{ cell.minutes }} {{ _('min') }}" aria-label="{{ cell.date }} · {{ cell.count }} {{ _('workouts') }} · {{ cell.minutes }} {{ _('min') }}">{{ cell.day }}</span>
+{% endif %}{% endfor %}{% endfor %}</div></div>{% endfor %}</div>
+<div class="calendar-legend"><span>{{ _('Active minutes') }}</span>{% for level,label in [(0,'0'),(1,'1–30'),(2,'31–60'),(3,'61–90'),(4,'91+')] %}<span class="calendar-key level-{{ level }}">{{ label }}</span>{% endfor %}</div>
+</section>

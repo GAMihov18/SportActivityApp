@@ -1,0 +1,15 @@
+{% extends 'base.html' %}{% from 'macros.html' import token,workout_row with context %}
+{% block title %}{{ person.name }}{% endblock %}{% block content %}
+<div class="page-heading"><div><h1>{{ person.name }}</h1><p>{{ person.pronouns }}{% if person.favorite_sport %} · {{ _(person.favorite_sport) }}{% endif %}</p><p>{{ _('Private profile') if person.private else _('Public profile') }}</p></div>
+{% if own %}<a class="button dark" href="{{ url_for('social.edit') }}">{{ _('Edit profile') }}</a>{% elif g.user %}
+<form method="post" action="{{ url_for('social.friendship',user_id=person.id) }}">{{ token() }}
+{% if not relation %}<button name="action" value="request" class="button dark">{{ _('Add friend') }}</button>
+{% elif relation.status=='accepted' %}<button name="action" value="remove" class="button secondary">{{ _('Remove friend') }}</button>
+{% elif relation.requester_id!=g.user.id %}<button name="action" value="accept" class="button dark">{{ _('Accept request') }}</button><button name="action" value="remove" class="button secondary">{{ _('Decline') }}</button>
+{% else %}<button name="action" value="remove" class="button secondary">{{ _('Cancel friend request') }}</button>{% endif %}</form>{% endif %}</div>
+<section class="card detail-panel"><h2>{{ _('About me') }}</h2><p class="description">{{ person.about or _('No introduction yet.') }}</p></section>
+{% if not own %}<p class="muted">{{ _('Only public activities are shown here.') }}</p>{% endif %}
+{% include 'calendar.html' %}
+<section class="card detail-panel"><h2>{{ _('Workouts') }}</h2>{% for activity in activities %}{{ workout_row(activity) }}{% else %}<p class="muted">{{ _('No workouts to display.') }}</p>{% endfor %}</section>
+<section class="card detail-panel"><h2>{{ _('Training') }}</h2>{% for item in training %}<article class="member-row"><div><h3>{{ item.title }}</h3><p>{{ item.starts_at|local_date('medium') }} · {{ item.minutes }} {{ _('min') }} · {{ item.location }}</p><p class="description">{{ item.description }}</p><small>{{ item.group_name }} · {{ _('Public') if item.public else _('Private') }}</small></div></article>{% else %}<p class="muted">{{ _('No training to display.') }}</p>{% endfor %}</section>
+{% endblock %}

@@ -1,7 +1,7 @@
 # Stride — Sports Activity Web App
 
 A modular Python web app for personal activity tracking, sports communities, clubs,
-and private friend groups. Flask serves both the backend and Jinja HTML frontend;
+and private groups. Flask serves both the backend and Jinja HTML frontend;
 SQLite persists data. English is the default, with Bulgarian translations via Flask-Babel.
 
 ## Contents
@@ -47,7 +47,7 @@ This adds 28 users, 168 completed workouts, 7 groups covering all supported spor
 56 upcoming training sessions, and 28 upcoming events with reservations and RSVPs.
 Each mock profile has six workouts, group membership, permission to schedule training,
 two created training sessions, and one created event. Dates are relative to the first
-run in Sofia local time. The football friend group is private.
+run in Sofia local time. The football group is private.
 
 Sign in as `elena.petrova@demo.example` with password `StrideDemo2026!`, or use
 any mock user's lowercase first/last name in the same email format. All mock accounts
@@ -70,12 +70,15 @@ If virtual environment creation cannot bootstrap pip, run
 ## Features
 
 - Accounts: register, sign in, sign out; hashed passwords and CSRF-protected forms.
-- Workouts: log completed activities with sport, date, duration, and notes; delete your own logs.
-- Dashboard: current-week activity statistics, memberships, upcoming event RSVPs.
-- Groups: public communities, public clubs, and private friend groups accessed by invite code.
+- Workouts: log completed activities with sport, date, duration, and notes; delete your own logs or change their profile visibility.
+- Dashboard: current-week activity statistics, weekly workout/minute goals by sport or overall, and a yearly calendar heatmap.
+- Profiles: edit your name, about me, pronouns, favorite sport, and profile privacy; display public workouts and training.
+- Friends: search visible profiles, send/accept/decline requests, cancel requests, and remove friends.
+- Groups: public communities, public clubs, and private groups accessed by invite code.
 - Memberships: join and leave; private groups are hidden from nonmembers.
 - Permissions: owners grant/revoke individual members' permission to schedule training.
-- Training: permitted members schedule sessions; group members reserve/cancel places.
+- Training: permitted members schedule one-off sessions or weekly series of up to 52 occurrences; group members reserve/cancel places.
+- Organizer controls: edit individual training occurrences or events while keeping reservations; cancel sessions, upcoming series, or events.
 - Events: publish public events and RSVP/cancel with capacity enforcement.
 - Search and sport filtering, responsive layout, keyboard-accessible dialogs.
 - English/Bulgarian interface, localized dates, and translated Python validation messages.
@@ -93,9 +96,10 @@ Supported sports are Running, Cycling, Strength, Swimming, Yoga, Football, and H
    stored in lowercase and must be unique.
 2. **Log a workout.** Open Workouts and enter a title, sport, activity date, duration,
    and optional notes. Dates must be today or earlier; duration is 1–1,440 minutes.
-   Your logs are visible only to you, and you can delete your own entries.
+   Logs start private. Choose Public to show an entry and its notes on your profile;
+   use the visibility button beside an existing entry to change it later.
 3. **Find or create a group.** Browse public communities and clubs, or create one with
-   a sport, location, and description. Choose a friend group for private access.
+   a sport, location, and description. Choose Private group for private access.
    To join a private group, enter an invite code shared by an existing member.
 4. **Schedule training.** Group owners can schedule immediately. Other members need
    scheduling permission granted by the owner on the group detail page. Sessions
@@ -104,9 +108,25 @@ Supported sports are Running, Cycling, Strength, Swimming, Yoga, Football, and H
 5. **Create or join an event.** Any signed-in user can publish a public event or RSVP
    to an upcoming event. Event and training capacities range from 1 to 10,000 places;
    creators must reserve a place themselves if they want to attend.
-6. **Check the dashboard.** Review workout count and minutes from Monday through today,
+6. **Check the dashboard.** Set a weekly workout target, minute target, or both, overall or for one sport.
+   The calendar heatmap groups completed workouts by day, with darker days for more minutes;
+   select a year to browse earlier activity. Review workout count and minutes from Monday through today,
    your five most recent workouts, membership count, and upcoming event RSVP count.
    The dashboard also previews up to three upcoming public events and visible groups.
+7. **Build your profile and connections.** Open My profile to edit your introduction,
+   pronouns, favorite sport, and privacy. Profiles start private: you and people who
+   currently share a group with you can view them. Public profiles are visible to anyone.
+   Other viewers only see workouts and created training sessions marked public; private
+   workouts never contribute to their view of your calendar. A public training session
+   in a private group remains visible only to that group's members. Friends do not bypass
+   profile privacy. Open Friends to search by name and send or respond to requests.
+8. **Manage schedules.** Choose Weekly and the number of sessions when scheduling training.
+   Each occurrence has separate reservations. Creators with current scheduling permission
+   and group owners can edit or cancel sessions; event owners can edit or cancel events.
+   Edits affect one occurrence and cannot reduce capacity below the reservation count.
+   Cancellation removes reservations and hides the item; series cancellation covers all
+   upcoming occurrences. Profile visibility changes do not affect group members' access
+   to the training schedule.
 
 Use the language selector to switch between English and Bulgarian. The choice stays
 in your browser session across sign-in and sign-out. Public groups and events can be
@@ -152,6 +172,13 @@ The supplied templates include it automatically.
 | `/logout` | POST | Clear the current account session. |
 | `/workouts` | GET, POST | List or add your workouts; sign-in required. |
 | `/workouts/<workout_id>/delete` | POST | Delete your own workout. |
+| `/workouts/<workout_id>/visibility` | POST | Change your workout's profile visibility. |
+| `/goals` | POST | Save or remove your weekly targets. |
+| `/profile` | GET | Redirect to your profile; sign-in required. |
+| `/profile/edit` | GET, POST | Edit your profile; sign-in required. |
+| `/profiles/<user_id>` | GET | View a public profile, your own profile, or a private profile belonging to a shared group member. |
+| `/friends` | GET | Friends, requests, and visible-profile search; sign-in required. |
+| `/friends/<user_id>` | POST | Send, accept, decline, cancel, or remove a friendship. |
 | `/groups` | GET, POST | Browse visible groups or create a group after signing in. |
 | `/groups/<group_id>` | GET | Public group detail, or private detail for members. |
 | `/groups/invite` | POST | Join by invite code; sign-in required. |
@@ -159,8 +186,12 @@ The supplied templates include it automatically.
 | `/groups/<group_id>/permissions/<user_id>` | POST | Owner grants or revokes a member's scheduling permission. |
 | `/training` | GET, POST | View upcoming sessions in your groups or schedule with permission. |
 | `/training/<session_id>/reserve` | POST | Group member reserves or cancels a training place. |
+| `/training/<session_id>/edit` | GET, POST | Authorized organizer edits one occurrence. |
+| `/training/<session_id>/cancel` | POST | Authorized organizer cancels an occurrence or upcoming series. |
 | `/events` | GET, POST | Browse upcoming public events or create one after signing in. |
 | `/events/<event_id>/rsvp` | POST | Reserve or cancel an event place; sign-in required. |
+| `/events/<event_id>/edit` | GET, POST | Event owner edits the event. |
+| `/events/<event_id>/cancel` | POST | Event owner cancels the event and removes RSVPs. |
 | `/language` | POST | Select English or Bulgarian and return to a local page. |
 
 ## Module map
@@ -175,6 +206,8 @@ The supplied templates include it automatically.
 | `stride/training.py` | Group schedules and training reservations |
 | `stride/events.py` | Public events and RSVPs |
 | `stride/dashboard.py` | Overview and personal statistics |
+| `stride/progress.py` | Weekly goals and calendar aggregation |
+| `stride/social.py` | Profiles, privacy, friend requests, and people search |
 | `stride/i18n.py` | Locale selection and date formatting |
 | `stride/core.py` | Shared form validation and access checks |
 
@@ -204,8 +237,10 @@ Capacity checks and reservation inserts run inside `BEGIN IMMEDIATE` transaction
 to serialize competing reservations.
 
 Startup executes `schema.sql` with `CREATE TABLE IF NOT EXISTS`, preserving existing
-records. There is no versioned migration system: changes to existing table definitions
-need a separate migration rather than merely editing the schema file.
+records. It also applies idempotent additive upgrades for workout visibility, training
+visibility/series/cancellation, and event cancellation. Existing activities remain private,
+and existing accounts start with private profiles. There is no general versioned migration
+system; other changes to existing table definitions still require a separate migration.
 
 For a local backup, stop the server and copy `instance/stride.sqlite` to a safe location.
 Keep `instance/session.key` stable to preserve session signing across restarts. To
@@ -219,6 +254,9 @@ restore, stop the server and replace the database with your backup before restar
 
 Tests use isolated SQLite files and cover authentication, CSRF, ownership, private-group
 access, permissions, membership cleanup, reservation capacity, and language switching.
+Additional feature tests cover calendar aggregation and leap years, goal validation,
+profile privacy, friendship request ownership, recurring sessions, organizer permissions,
+cancellation, capacity-safe editing, and upgrades of existing databases.
 Each test creates a separate `instance/test-<unique-id>.sqlite` database and removes it
 afterward; the normal application database is not used. On Linux/macOS, use
 `.venv/bin/python -m unittest discover -s tests -v`.
@@ -260,8 +298,9 @@ the language selector. Translate sport labels too, since they are looked up dyna
 This is a local working first version. Event/session times currently use the server's
 local time; run it in the community's time zone. Cross-time-zone scheduling needs a
 stored IANA time zone before international deployment. Language selection is independent
-of time zone. Payments, email invitations, reminders, recurring sessions, attendance
-tracking, profile editing, and event/session editing/cancellation are not yet implemented.
+of time zone. Payments, email invitations, reminders, and attendance tracking are not
+yet implemented. Recurring training currently supports weekly series only; edits apply
+to one occurrence, and calendar intensity represents active minutes rather than distance.
 
 For deployment, use a production WSGI server with HTTPS, a stable `SECRET_KEY` environment
 variable, secure cookies, backups, and login/invite rate limiting. The local session key is

@@ -22,6 +22,7 @@
 <span>{{ icon }}</span>{{ label }}{% if request.endpoint == endpoint %}<i>
 </i>{% endif %}</a>
     {% endfor %}
+    {% if g.user %}<a href="{{ url_for('social.friends') }}" class="nav-link {{ 'active' if request.endpoint == 'social.friends' }}"><span>♡</span>{{ _('Friends') }}</a><a href="{{ url_for('social.mine') }}" class="nav-link {{ 'active' if request.endpoint in ('social.mine','social.profile','social.edit') }}"><span>☺</span>{{ _('My profile') }}</a>{% endif %}
   </nav>
   <div class="sidebar-note">
 <span>✦</span>

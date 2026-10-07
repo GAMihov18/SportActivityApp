@@ -19,7 +19,7 @@ NAMES = (
     'Lily Chen', 'Ethan Park', 'Chloe Dubois', 'Hugo Bernard',
     'Zara Ali', 'Omar Hassan', 'Eva Novak', 'Max Fischer',
 )
-# One community per sport, including a private friend group.
+# One community per sport, including a private group.
 GROUPS = (
     ('Borisova Garden Runners', 'Borisova Garden, Sofia', 'community'),
     ('Sofia Cycling Club', 'South Park, Sofia', 'club'),

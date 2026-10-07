@@ -46,7 +46,7 @@ def create_app(test_config=None):
     def error_page(error):
         return render_template('error.html', error=error), error.code
 
-    from . import accounts, workouts, groups, events, dashboard, i18n, training
-    for module in (accounts, workouts, groups, events, dashboard, i18n, training):
+    from . import accounts, workouts, groups, events, dashboard, i18n, training, social, progress
+    for module in (accounts, workouts, groups, events, dashboard, i18n, training, social, progress):
         app.register_blueprint(module.bp)
     return app

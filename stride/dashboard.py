@@ -5,6 +5,7 @@ from .database import db
 
 from .groups import group_rows
 from .events import event_rows
+from .progress import activity_calendar, goal_progress
 
 bp = Blueprint('dashboard', __name__)
 
@@ -19,5 +20,7 @@ def dashboard():
     rsvps = db().execute('SELECT COUNT(*) FROM rsvps JOIN events ON events.id=rsvps.event_id WHERE user_id=? AND starts_at>=?',
                         (session.get('user_id'), datetime.now().strftime('%Y-%m-%dT%H:%M'))).fetchone()[0]
     return render_template('dashboard.html', activities=activities, weekly=weekly, membership_count=memberships,
-                           rsvp_count=rsvps, events=event_rows()[:3], groups=group_rows()[:3])
+                           rsvp_count=rsvps, events=event_rows()[:3], groups=group_rows()[:3],
+                           progress=goal_progress(session.get('user_id')),
+                           calendar=activity_calendar(session.get('user_id')))
 

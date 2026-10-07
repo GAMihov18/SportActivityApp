@@ -10,7 +10,7 @@
   <h3>
 <a href="{{ url_for('groups.detail',group_id=group.id) }}">{{ group.name }} ↗</a>
 </h3>
-<p class="location">⌖ {{ group.location }} · {{ _('Private friends') if group.private else (_('Club') if group.kind == 'club' else _('Community')) }}</p>
+<p class="location">⌖ {{ group.location }} · {{ _('Private group') if group.private else (_('Club') if group.kind == 'club' else _('Community')) }}</p>
 <p class="description">{{ group.description }}</p>
   <div class="card-bottom">
 <span>◎ {{ group.members }} {{ _('members') }}</span>{% if g.user %}<form method="post" action="{{ url_for('groups.membership',group_id=group.id) }}">{{ token() }}<input type="hidden" name="action" value="{{ 'leave' if group.joined else 'join' }}">
@@ -33,7 +33,8 @@
 </div>
 {% if g.user %}<form method="post" action="{{ url_for('events.rsvp',event_id=event.id) }}">{{ token() }}<input type="hidden" name="action" value="{{ 'cancel' if event.joined else 'join' }}">
 <button class="button small {{ 'secondary' if event.joined else 'dark' }}" {% if not event.joined and event.attendees >= event.capacity %}disabled{% endif %}>{{ _('Cancel RSVP') if event.joined else (_('Full') if event.attendees >= event.capacity else _('Attend')) }}</button>
-</form>{% else %}<a href="{{ url_for('accounts.login') }}" class="button small secondary">{{ _('Attend') }} ↗</a>{% endif %}</article>
+</form>{% else %}<a href="{{ url_for('accounts.login') }}" class="button small secondary">{{ _('Attend') }} ↗</a>{% endif %}
+{% if g.user and g.user.id == event.owner_id %}<div class="schedule-actions"><a class="button secondary small" href="{{ url_for('events.edit',event_id=event.id) }}">{{ _('Edit event') }}</a><form method="post" action="{{ url_for('events.cancel',event_id=event.id) }}" data-confirm="{{ _('Cancel this event and all RSVPs?') }}">{{ token() }}<button class="button secondary small">{{ _('Cancel event') }}</button></form></div>{% endif %}</article>
 {% endmacro %}
 {% macro workout_row(activity, deletable=false) %}
 <div class="workout-row searchable" data-sport="{{ activity.sport }}">
@@ -42,7 +43,7 @@
 <strong>{{ activity.title }}</strong>
 <small>{{ _(activity.sport) }} <span>·</span> {{ activity.activity_date|local_date }}</small>{% if activity.notes %}<p>{{ activity.notes }}</p>{% endif %}</div>
 <span class="duration">{{ activity.minutes }} <small>{{ _('min') }}</small>
-</span>{% if deletable %}<form method="post" action="{{ url_for('workouts.delete_workout',workout_id=activity.id) }}" data-confirm="{{ _('Delete this workout?') }}">{{ token() }}<button class="text-button delete" aria-label="{{ _('Delete workout') }}">×</button>
+</span>{% if deletable %}<form method="post" action="{{ url_for('workouts.visibility',workout_id=activity.id) }}">{{ token() }}<button class="button secondary small" name="visibility" value="{{ 'private' if activity.public else 'public' }}" title="{{ _('Make private') if activity.public else _('Make public') }}">{{ _('Public') if activity.public else _('Private') }}</button></form><form method="post" action="{{ url_for('workouts.delete_workout',workout_id=activity.id) }}" data-confirm="{{ _('Delete this workout?') }}">{{ token() }}<button class="text-button delete" aria-label="{{ _('Delete workout') }}">×</button>
 </form>{% else %}<span class="complete">✓</span>{% endif %}</div>
 {% endmacro %}
 {% macro filters() %}<div class="filters">

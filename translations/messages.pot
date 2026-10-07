@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-10-05 13:04+0300\n"
+"POT-Creation-Date: 2026-10-07 13:31+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,15 +17,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.18.0\n"
 
-#: stride/accounts.py:17
+#: stride/accounts.py:18
 msgid "Use a valid email and a password with at least 8 characters."
 msgstr ""
 
-#: stride/accounts.py:26
+#: stride/accounts.py:27
 msgid "This email is already registered."
 msgstr ""
 
-#: stride/accounts.py:40
+#: stride/accounts.py:41
 msgid "Email or password is incorrect."
 msgstr ""
 
@@ -33,11 +33,11 @@ msgstr ""
 msgid "Sign in to continue."
 msgstr ""
 
-#: stride/core.py:21
+#: stride/core.py:21 stride/social.py:64
 msgid "Please fill in all fields within their length limits."
 msgstr ""
 
-#: stride/core.py:40
+#: stride/core.py:40 stride/progress.py:62 stride/social.py:66
 msgid "Choose a valid sport."
 msgstr ""
 
@@ -53,7 +53,8 @@ msgstr ""
 msgid "Enter a valid date and time."
 msgstr ""
 
-#: stride/events.py:24 stride/training.py:21
+#: stride/events.py:24 stride/events.py:75 stride/training.py:22
+#: stride/training.py:100
 msgid "Choose a future local date and time."
 msgstr ""
 
@@ -69,7 +70,7 @@ msgstr ""
 msgid "This event has already started."
 msgstr ""
 
-#: stride/events.py:49 stride/training.py:56
+#: stride/events.py:49 stride/training.py:68
 msgid "You are already going."
 msgstr ""
 
@@ -81,628 +82,1010 @@ msgstr ""
 msgid "You are on the list. See you there!"
 msgstr ""
 
-#: stride/groups.py:30
+#: stride/events.py:78 stride/training.py:107
+msgid "Capacity cannot be lower than existing reservations."
+msgstr ""
+
+#: stride/events.py:82
+msgid "Event updated."
+msgstr ""
+
+#: stride/events.py:100
+msgid "Event cancelled. RSVPs have been removed."
+msgstr ""
+
+#: stride/groups.py:33
 msgid "Choose a valid group type."
 msgstr ""
 
-#: stride/groups.py:37
+#: stride/groups.py:40
 msgid "Your group is ready."
 msgstr ""
 
-#: stride/groups.py:50
+#: stride/groups.py:53
 msgid "That invite code is not valid."
 msgstr ""
 
-#: stride/groups.py:54 stride/groups.py:74
+#: stride/groups.py:57 stride/groups.py:77
 msgid "Welcome to the group!"
 msgstr ""
 
-#: stride/groups.py:67
+#: stride/groups.py:70
 msgid "Group owners must remain members to manage the group."
 msgstr ""
 
-#: stride/groups.py:71
+#: stride/groups.py:74
 msgid "You left the group."
 msgstr ""
 
-#: stride/groups.py:109
+#: stride/groups.py:112
 msgid "Scheduling permission updated."
 msgstr ""
 
-#: stride/training.py:27
+#: stride/progress.py:66
+msgid "Set at least one weekly target."
+msgstr ""
+
+#: stride/progress.py:71
+msgid "Weekly goals saved."
+msgstr ""
+
+#: stride/social.py:68 stride/training.py:27 stride/training.py:104
+#: stride/workouts.py:21
+msgid "Choose a valid visibility."
+msgstr ""
+
+#: stride/social.py:74
+msgid "Profile saved."
+msgstr ""
+
+#: stride/social.py:116
+msgid "Friends list updated."
+msgstr ""
+
+#: stride/training.py:30
+msgid "Choose a valid repeat schedule."
+msgstr ""
+
+#: stride/training.py:37
 msgid "Training session scheduled."
 msgstr ""
 
-#: stride/training.py:52
+#: stride/training.py:64
 msgid "Reservation cancelled."
 msgstr ""
 
-#: stride/training.py:54
+#: stride/training.py:66
 msgid "This session has already started."
 msgstr ""
 
-#: stride/training.py:58
+#: stride/training.py:70
 msgid "This session is full."
 msgstr ""
 
-#: stride/training.py:61
+#: stride/training.py:73
 msgid "Your training place is reserved."
+msgstr ""
+
+#: stride/training.py:111
+msgid "Training session updated."
+msgstr ""
+
+#: stride/training.py:134
+msgid "Training cancelled. Reservations have been removed."
 msgstr ""
 
 #: stride/workouts.py:17
 msgid "Workout dates cannot be in the future."
 msgstr ""
 
-#: stride/workouts.py:20
+#: stride/workouts.py:23
 msgid "Notes must be under 2000 characters."
 msgstr ""
 
-#: stride/workouts.py:24
+#: stride/workouts.py:27
 msgid "Workout saved. Keep it up!"
 msgstr ""
 
-#: stride/workouts.py:38
+#: stride/workouts.py:55
 msgid "Workout deleted."
 msgstr ""
 
-#: templates/auth.html:1 templates/auth.html:2
+#: templates/auth.html:1 templates/auth.html:12 templates/auth.html:17
+#: templates/auth.html:19
 msgid "Create an account"
 msgstr ""
 
-#: templates/auth.html:1 templates/auth.html:2
+#: templates/auth.html:1 templates/auth.html:12 templates/auth.html:17
+#: templates/auth.html:19 templates/base.html:55
 msgid "Sign in"
 msgstr ""
 
-#: templates/auth.html:2
+#: templates/auth.html:4
 msgid "WELCOME TO STRIDE"
 msgstr ""
 
-#: templates/auth.html:2
+#: templates/auth.html:5
 msgid "A fresh start."
 msgstr ""
 
-#: templates/auth.html:2
+#: templates/auth.html:5
 msgid "Welcome back."
 msgstr ""
 
-#: templates/auth.html:2
+#: templates/auth.html:6
 msgid "Your next workout. Your new community. It all starts here."
 msgstr ""
 
-#: templates/auth.html:2
+#: templates/auth.html:13
 msgid "Your name"
 msgstr ""
 
-#: templates/auth.html:2
+#: templates/auth.html:14
 msgid "Email"
 msgstr ""
 
-#: templates/auth.html:2
+#: templates/auth.html:16
 msgid "Password"
 msgstr ""
 
-#: templates/auth.html:2
+#: templates/auth.html:17
 msgid "At least 8 characters."
 msgstr ""
 
-#: templates/auth.html:2
+#: templates/auth.html:19
 msgid "Already a member?"
 msgstr ""
 
-#: templates/auth.html:2
+#: templates/auth.html:19
 msgid "New here?"
 msgstr ""
 
-#: templates/base.html:5 templates/base.html:14
+#: templates/base.html:6 templates/base.html:20
 msgid "Overview"
 msgstr ""
 
-#: templates/base.html:12
+#: templates/base.html:18
 msgid "YOUR SPACE"
 msgstr ""
 
-#: templates/base.html:13
+#: templates/base.html:19
 msgid "Main navigation"
 msgstr ""
 
-#: templates/base.html:14 templates/workouts.html:1
+#: templates/base.html:20 templates/calendar.html:5 templates/goals.html:4
+#: templates/profile.html:13 templates/workouts.html:1
 msgid "Workouts"
 msgstr ""
 
-#: templates/base.html:14 templates/training.html:1
+#: templates/base.html:20 templates/profile.html:14 templates/training.html:1
 msgid "Training"
 msgstr ""
 
-#: templates/base.html:14 templates/groups.html:1
+#: templates/base.html:20 templates/groups.html:1
 msgid "Groups"
 msgstr ""
 
-#: templates/base.html:14 templates/events.html:1
+#: templates/base.html:20 templates/events.html:1
 msgid "Events"
 msgstr ""
 
-#: templates/base.html:18 templates/groups.html:2
+#: templates/base.html:25 templates/friends.html:1 templates/friends.html:2
+msgid "Friends"
+msgstr ""
+
+#: templates/base.html:25 templates/friends.html:2
+#: templates/profile_edit.html:3
+msgid "My profile"
+msgstr ""
+
+#: templates/base.html:29 templates/groups.html:12
 msgid "Better together."
 msgstr ""
 
-#: templates/base.html:18
+#: templates/base.html:30
 msgid "Find your people. Find your pace."
 msgstr ""
 
-#: templates/base.html:18 templates/dashboard.html:7 templates/training.html:2
+#: templates/base.html:31 templates/dashboard.html:97
+#: templates/training.html:29
 msgid "Explore groups"
 msgstr ""
 
-#: templates/base.html:20
+#: templates/base.html:38
 msgid "Community member"
 msgstr ""
 
-#: templates/base.html:20
+#: templates/base.html:43 templates/base.html:54
 msgid "Sign out"
 msgstr ""
 
-#: templates/base.html:21
+#: templates/base.html:45 templates/base.html:56
 msgid "Join Stride"
 msgstr ""
 
-#: templates/base.html:21
+#: templates/base.html:46
 msgid "Already a member? Sign in"
 msgstr ""
 
-#: templates/base.html:25
+#: templates/base.html:57
 msgid "A little movement. A lot of possibility."
 msgstr ""
 
-#: templates/base.html:25
+#: templates/base.html:61
 msgid "Language"
 msgstr ""
 
-#: templates/base.html:25
+#: templates/base.html:68 templates/goals.html:14
 msgid "Save"
 msgstr ""
 
-#: templates/base.html:30
+#: templates/base.html:76
 msgid "Make movement part of your everyday."
 msgstr ""
 
-#: templates/dashboard.html:3
-msgid "YOUR DAILY DOSE OF MOVEMENT"
+#: templates/calendar.html:2
+msgid "Exercise calendar"
 msgstr ""
 
-#: templates/dashboard.html:3
-#, python-format
-msgid "Good to see you, %(name)s."
+#: templates/calendar.html:3
+msgid "Year"
 msgstr ""
 
-#: templates/dashboard.html:3
-msgid "Find your next stride."
+#: templates/calendar.html:4
+msgid "View"
 msgstr ""
 
-#: templates/dashboard.html:3
-msgid "Every workout, every connection, every small win. All here."
+#: templates/calendar.html:5
+msgid "Darker days mean more active minutes."
 msgstr ""
 
-#: templates/dashboard.html:3 templates/dashboard.html:6
-#: templates/workouts.html:2 templates/workouts.html:4
-msgid "Log a workout"
+#: templates/calendar.html:8
+msgid "Mon"
 msgstr ""
 
-#: templates/dashboard.html:4
-msgid "MOVE WITH PURPOSE"
+#: templates/calendar.html:8
+msgid "Tue"
 msgstr ""
 
-#: templates/dashboard.html:4
-msgid "Your pace."
+#: templates/calendar.html:8
+msgid "Wed"
 msgstr ""
 
-#: templates/dashboard.html:4
-msgid "Your people."
+#: templates/calendar.html:8
+msgid "Thu"
 msgstr ""
 
-#: templates/dashboard.html:4
-msgid "Your potential."
+#: templates/calendar.html:8
+msgid "Fri"
 msgstr ""
 
-#: templates/dashboard.html:4
-msgid "Build a routine you love, with a community that keeps you going."
+#: templates/calendar.html:8
+msgid "Sat"
 msgstr ""
 
-#: templates/dashboard.html:4
-msgid "Find your community"
+#: templates/calendar.html:8
+msgid "Sun"
 msgstr ""
 
-#: templates/dashboard.html:5
-msgid "Your statistics"
+#: templates/calendar.html:10
+msgid "workouts"
 msgstr ""
 
-#: templates/dashboard.html:5
-msgid "Workouts this week"
+#: templates/calendar.html:10 templates/macros.html:45
+#: templates/profile.html:14 templates/training.html:16
+msgid "min"
 msgstr ""
 
-#: templates/dashboard.html:5
-msgid "One session at a time"
-msgstr ""
-
-#: templates/dashboard.html:5
+#: templates/calendar.html:12 templates/dashboard.html:42
+#: templates/goals.html:5
 msgid "Active minutes"
 msgstr ""
 
 #: templates/dashboard.html:5
-msgid "Your movement this week"
-msgstr ""
-
-#: templates/dashboard.html:5
-msgid "Your groups"
-msgstr ""
-
-#: templates/dashboard.html:5
-msgid "Connections that count"
-msgstr ""
-
-#: templates/dashboard.html:5
-msgid "Upcoming RSVPs"
-msgstr ""
-
-#: templates/dashboard.html:5
-msgid "Something to look forward to"
+msgid "YOUR DAILY DOSE OF MOVEMENT"
 msgstr ""
 
 #: templates/dashboard.html:6
-msgid "Recent workouts"
+#, python-format
+msgid "Good to see you, %(name)s."
 msgstr ""
 
 #: templates/dashboard.html:6
-msgid "View all"
-msgstr ""
-
-#: templates/dashboard.html:6 templates/workouts.html:3
-msgid "Your next chapter starts here."
-msgstr ""
-
-#: templates/dashboard.html:6 templates/workouts.html:3
-msgid "Log your first workout and watch your progress grow."
-msgstr ""
-
-#: templates/dashboard.html:6
-msgid "On the horizon"
-msgstr ""
-
-#: templates/dashboard.html:6
-msgid "All events"
-msgstr ""
-
-#: templates/dashboard.html:6 templates/events.html:2
-msgid "Make something happen."
-msgstr ""
-
-#: templates/dashboard.html:6 templates/events.html:2
-msgid "Create an event and bring people together."
-msgstr ""
-
-#: templates/dashboard.html:6
-msgid "Explore events"
-msgstr ""
-
-#: templates/dashboard.html:7 templates/groups.html:2
-msgid "Find your people"
+msgid "Find your next stride."
 msgstr ""
 
 #: templates/dashboard.html:7
+msgid "Every workout, every connection, every small win. All here."
+msgstr ""
+
+#: templates/dashboard.html:9 templates/dashboard.html:71
+#: templates/workouts.html:8 templates/workouts.html:17
+msgid "Log a workout"
+msgstr ""
+
+#: templates/dashboard.html:13
+msgid "MOVE WITH PURPOSE"
+msgstr ""
+
+#: templates/dashboard.html:14
+msgid "Your pace."
+msgstr ""
+
+#: templates/dashboard.html:14
+msgid "Your people."
+msgstr ""
+
+#: templates/dashboard.html:15
+msgid "Your potential."
+msgstr ""
+
+#: templates/dashboard.html:17
+msgid "Build a routine you love, with a community that keeps you going."
+msgstr ""
+
+#: templates/dashboard.html:18
+msgid "Find your community"
+msgstr ""
+
+#: templates/dashboard.html:34
+msgid "Your statistics"
+msgstr ""
+
+#: templates/dashboard.html:36
+msgid "Workouts this week"
+msgstr ""
+
+#: templates/dashboard.html:39
+msgid "One session at a time"
+msgstr ""
+
+#: templates/dashboard.html:45
+msgid "Your movement this week"
+msgstr ""
+
+#: templates/dashboard.html:48
+msgid "Your groups"
+msgstr ""
+
+#: templates/dashboard.html:51
+msgid "Connections that count"
+msgstr ""
+
+#: templates/dashboard.html:54
+msgid "Upcoming RSVPs"
+msgstr ""
+
+#: templates/dashboard.html:57
+msgid "Something to look forward to"
+msgstr ""
+
+#: templates/dashboard.html:64
+msgid "Recent workouts"
+msgstr ""
+
+#: templates/dashboard.html:65
+msgid "View all"
+msgstr ""
+
+#: templates/dashboard.html:69 templates/workouts.html:12
+msgid "Your next chapter starts here."
+msgstr ""
+
+#: templates/dashboard.html:70 templates/workouts.html:13
+msgid "Log your first workout and watch your progress grow."
+msgstr ""
+
+#: templates/dashboard.html:76
+msgid "On the horizon"
+msgstr ""
+
+#: templates/dashboard.html:77
+msgid "All events"
+msgstr ""
+
+#: templates/dashboard.html:81 templates/events.html:10
+msgid "Make something happen."
+msgstr ""
+
+#: templates/dashboard.html:82 templates/events.html:11
+msgid "Create an event and bring people together."
+msgstr ""
+
+#: templates/dashboard.html:83
+msgid "Explore events"
+msgstr ""
+
+#: templates/dashboard.html:90 templates/groups.html:5
+msgid "Find your people"
+msgstr ""
+
+#: templates/dashboard.html:91
 msgid "Shared interests. New connections. More motivation."
 msgstr ""
 
-#: templates/dashboard.html:7 templates/group_detail.html:2
+#: templates/dashboard.html:93 templates/group_detail.html:2
 msgid "All groups"
 msgstr ""
 
-#: templates/dashboard.html:7 templates/groups.html:2
+#: templates/dashboard.html:96 templates/groups.html:13
 msgid "Be the first to start a group in your community."
 msgstr ""
 
-#: templates/error.html:1
+#: templates/error.html:3
 msgid "We could not complete that request."
 msgstr ""
 
-#: templates/error.html:1
+#: templates/error.html:3
 msgid "Refresh the page and try again."
 msgstr ""
 
-#: templates/error.html:1
+#: templates/error.html:3
 msgid "Back to overview"
 msgstr ""
 
-#: templates/events.html:2
+#: templates/events.html:4
 msgid "PUT SOMETHING GOOD ON YOUR CALENDAR"
 msgstr ""
 
-#: templates/events.html:2
+#: templates/events.html:5
 msgid "Upcoming events"
 msgstr ""
 
-#: templates/events.html:2
+#: templates/events.html:6
 msgid "Show up, try something new, and move together."
 msgstr ""
 
-#: templates/events.html:2 templates/events.html:3
+#: templates/events.html:7 templates/events.html:15 templates/events.html:30
 msgid "Create an event"
 msgstr ""
 
-#: templates/events.html:2
+#: templates/events.html:7
 msgid ""
 "Event times use the organiser’s local time. Confirm the time zone with "
 "them when travelling."
 msgstr ""
 
-#: templates/events.html:3 templates/groups.html:3 templates/training.html:3
-#: templates/workouts.html:4
+#: templates/events.html:16 templates/goals.html:8 templates/groups.html:18
+#: templates/training.html:34 templates/workouts.html:18
 msgid "Close"
 msgstr ""
 
-#: templates/events.html:3
+#: templates/events.html:18
 msgid "Event title"
 msgstr ""
 
-#: templates/events.html:3 templates/groups.html:3 templates/training.html:3
+#: templates/events.html:19 templates/groups.html:27
+#: templates/schedule_edit.html:7 templates/training.html:48
 msgid "Location"
 msgstr ""
 
-#: templates/events.html:3 templates/training.html:3
+#: templates/events.html:22 templates/schedule_edit.html:8
+#: templates/training.html:40
 msgid "Date and time"
 msgstr ""
 
-#: templates/events.html:3 templates/training.html:3
+#: templates/events.html:24 templates/schedule_edit.html:11
+#: templates/training.html:45
 msgid "Capacity"
 msgstr ""
 
-#: templates/events.html:3
+#: templates/events.html:27
 msgid "Event details"
 msgstr ""
 
-#: templates/group_detail.html:2 templates/macros.html:6
-msgid "Private friends"
+#: templates/friends.html:2
+msgid "Find people and keep in touch with your training friends."
 msgstr ""
 
-#: templates/group_detail.html:2 templates/macros.html:6
-msgid "Club"
+#: templates/friends.html:3
+msgid "Find people"
 msgstr ""
 
-#: templates/group_detail.html:2 templates/macros.html:6
-msgid "Community"
+#: templates/friends.html:3 templates/profile_edit.html:5
+msgid "Name"
 msgstr ""
 
-#: templates/group_detail.html:2
-msgid "Group training"
-msgstr ""
-
-#: templates/group_detail.html:2 templates/macros.html:7
-msgid "Join group"
-msgstr ""
-
-#: templates/group_detail.html:2 templates/groups.html:3
-msgid "About your group"
-msgstr ""
-
-#: templates/group_detail.html:3
-msgid "Invite your friends"
-msgstr ""
-
-#: templates/group_detail.html:3
-msgid "Share this code with someone you want to join your group."
-msgstr ""
-
-#: templates/group_detail.html:3
-msgid "Members and permissions"
-msgstr ""
-
-#: templates/group_detail.html:3
-msgid "The owner can give members permission to schedule group training."
-msgstr ""
-
-#: templates/group_detail.html:3
-msgid "Owner"
-msgstr ""
-
-#: templates/group_detail.html:3
-msgid "Can schedule training"
-msgstr ""
-
-#: templates/group_detail.html:3
-msgid "Member"
-msgstr ""
-
-#: templates/group_detail.html:3
-msgid "Revoke scheduling"
-msgstr ""
-
-#: templates/group_detail.html:3
-msgid "Allow scheduling"
-msgstr ""
-
-#: templates/groups.html:2
-msgid "A SHARED LOVE OF MOVEMENT"
-msgstr ""
-
-#: templates/groups.html:2
-msgid "Connect with a community that moves like you."
-msgstr ""
-
-#: templates/groups.html:2 templates/groups.html:3
-msgid "Create a group"
-msgstr ""
-
-#: templates/groups.html:2
-msgid "Have a private group invite?"
-msgstr ""
-
-#: templates/groups.html:2
-msgid "Invite code"
-msgstr ""
-
-#: templates/groups.html:2
-msgid "Join with code"
-msgstr ""
-
-#: templates/groups.html:3
-msgid "Group name"
-msgstr ""
-
-#: templates/groups.html:3
-msgid "Group type"
-msgstr ""
-
-#: templates/groups.html:3
-msgid "Public community"
-msgstr ""
-
-#: templates/groups.html:3
-msgid "Public sports club"
-msgstr ""
-
-#: templates/groups.html:3
-msgid "Private friend group"
-msgstr ""
-
-#: templates/macros.html:1
-msgid "Sport"
-msgstr ""
-
-#: templates/macros.html:7
-msgid "members"
-msgstr ""
-
-#: templates/macros.html:7
-msgid "Leave group"
-msgstr ""
-
-#: templates/macros.html:11 templates/training.html:2
-msgid "going"
-msgstr ""
-
-#: templates/macros.html:12
-msgid "Cancel RSVP"
-msgstr ""
-
-#: templates/macros.html:12 templates/training.html:2
-msgid "Full"
-msgstr ""
-
-#: templates/macros.html:12
-msgid "Attend"
-msgstr ""
-
-#: templates/macros.html:15 templates/training.html:2
-msgid "min"
-msgstr ""
-
-#: templates/macros.html:15
-msgid "Delete this workout?"
-msgstr ""
-
-#: templates/macros.html:15
-msgid "Delete workout"
-msgstr ""
-
-#: templates/macros.html:17
-msgid "Search by name or location…"
-msgstr ""
-
-#: templates/macros.html:17
+#: templates/friends.html:3 templates/macros.html:52
 msgid "Search"
 msgstr ""
 
-#: templates/macros.html:17
-msgid "Filter by sport"
+#: templates/friends.html:4 templates/profile.html:6
+msgid "Add friend"
 msgstr ""
 
-#: templates/macros.html:17
+#: templates/friends.html:4
+msgid "No visible profiles found."
+msgstr ""
+
+#: templates/friends.html:5
+msgid "Your friends"
+msgstr ""
+
+#: templates/friends.html:5
+msgid "Friend requests"
+msgstr ""
+
+#: templates/friends.html:6
+msgid "Request sent"
+msgstr ""
+
+#: templates/friends.html:6
+msgid "Wants to be your friend"
+msgstr ""
+
+#: templates/friends.html:7 templates/profile.html:8
+msgid "Accept request"
+msgstr ""
+
+#: templates/friends.html:7 templates/profile.html:7
+msgid "Remove friend"
+msgstr ""
+
+#: templates/friends.html:7
+msgid "Cancel request"
+msgstr ""
+
+#: templates/friends.html:7 templates/profile.html:8
+msgid "Decline"
+msgstr ""
+
+#: templates/friends.html:8
+msgid "Nothing here yet."
+msgstr ""
+
+#: templates/goals.html:2 templates/goals.html:8
+msgid "Weekly goals"
+msgstr ""
+
+#: templates/goals.html:2
+msgid "Set goals"
+msgstr ""
+
+#: templates/goals.html:3 templates/goals.html:10 templates/macros.html:55
 msgid "All sports"
 msgstr ""
 
+#: templates/goals.html:6
+msgid "Remove goals"
+msgstr ""
+
+#: templates/goals.html:7
+msgid "Choose weekly targets for workouts and active minutes."
+msgstr ""
+
+#: templates/goals.html:10 templates/macros.html:1
+#: templates/schedule_edit.html:6
+msgid "Sport"
+msgstr ""
+
+#: templates/goals.html:11
+msgid "Workouts per week"
+msgstr ""
+
+#: templates/goals.html:12
+msgid "Minutes per week"
+msgstr ""
+
+#: templates/goals.html:13
+msgid "Set either target or both. Leave a field blank to skip it."
+msgstr ""
+
+#: templates/group_detail.html:5 templates/groups.html:25
+#: templates/macros.html:13
+msgid "Private group"
+msgstr ""
+
+#: templates/group_detail.html:5 templates/macros.html:13
+msgid "Club"
+msgstr ""
+
+#: templates/group_detail.html:5 templates/macros.html:13
+msgid "Community"
+msgstr ""
+
+#: templates/group_detail.html:8
+msgid "Group training"
+msgstr ""
+
+#: templates/group_detail.html:8 templates/group_detail.html:9
+#: templates/macros.html:17 templates/macros.html:18
+msgid "Join group"
+msgstr ""
+
+#: templates/group_detail.html:11 templates/groups.html:29
+msgid "About your group"
+msgstr ""
+
+#: templates/group_detail.html:15
+msgid "Invite your friends"
+msgstr ""
+
+#: templates/group_detail.html:16
+msgid "Share this code with someone you want to join your group."
+msgstr ""
+
+#: templates/group_detail.html:19
+msgid "Members and permissions"
+msgstr ""
+
+#: templates/group_detail.html:20
+msgid "The owner can give members permission to schedule group training."
+msgstr ""
+
+#: templates/group_detail.html:24
+msgid "Owner"
+msgstr ""
+
+#: templates/group_detail.html:24
+msgid "Can schedule training"
+msgstr ""
+
+#: templates/group_detail.html:24
+msgid "Member"
+msgstr ""
+
+#: templates/group_detail.html:26
+msgid "Revoke scheduling"
+msgstr ""
+
+#: templates/group_detail.html:26
+msgid "Allow scheduling"
+msgstr ""
+
+#: templates/groups.html:4
+msgid "A SHARED LOVE OF MOVEMENT"
+msgstr ""
+
+#: templates/groups.html:6
+msgid "Connect with a community that moves like you."
+msgstr ""
+
+#: templates/groups.html:7 templates/groups.html:17 templates/groups.html:32
+msgid "Create a group"
+msgstr ""
+
+#: templates/groups.html:7
+msgid "Have a private group invite?"
+msgstr ""
+
+#: templates/groups.html:8
+msgid "Invite code"
+msgstr ""
+
+#: templates/groups.html:9
+msgid "Join with code"
+msgstr ""
+
+#: templates/groups.html:20
+msgid "Group name"
+msgstr ""
+
+#: templates/groups.html:22
+msgid "Group type"
+msgstr ""
+
+#: templates/groups.html:23
+msgid "Public community"
+msgstr ""
+
+#: templates/groups.html:24
+msgid "Public sports club"
+msgstr ""
+
+#: templates/macros.html:16
+msgid "members"
+msgstr ""
+
 #: templates/macros.html:17
+msgid "Leave group"
+msgstr ""
+
+#: templates/macros.html:32 templates/training.html:18
+msgid "going"
+msgstr ""
+
+#: templates/macros.html:35
+msgid "Cancel RSVP"
+msgstr ""
+
+#: templates/macros.html:35 templates/training.html:22
+msgid "Full"
+msgstr ""
+
+#: templates/macros.html:35 templates/macros.html:36
+msgid "Attend"
+msgstr ""
+
+#: templates/macros.html:37 templates/schedule_edit.html:1
+#: templates/schedule_edit.html:2
+msgid "Edit event"
+msgstr ""
+
+#: templates/macros.html:37
+msgid "Cancel this event and all RSVPs?"
+msgstr ""
+
+#: templates/macros.html:37
+msgid "Cancel event"
+msgstr ""
+
+#: templates/macros.html:46
+msgid "Make private"
+msgstr ""
+
+#: templates/macros.html:46
+msgid "Make public"
+msgstr ""
+
+#: templates/macros.html:46 templates/profile.html:14
+#: templates/schedule_edit.html:10 templates/training.html:54
+#: templates/workouts.html:30
+msgid "Public"
+msgstr ""
+
+#: templates/macros.html:46 templates/profile.html:14
+#: templates/schedule_edit.html:10 templates/training.html:54
+#: templates/workouts.html:30
+msgid "Private"
+msgstr ""
+
+#: templates/macros.html:46
+msgid "Delete this workout?"
+msgstr ""
+
+#: templates/macros.html:46
+msgid "Delete workout"
+msgstr ""
+
+#: templates/macros.html:52
+msgid "Search by name or location…"
+msgstr ""
+
+#: templates/macros.html:54
+msgid "Filter by sport"
+msgstr ""
+
+#: templates/macros.html:57
 msgid "No matches. Try another search."
 msgstr ""
 
-#: templates/training.html:2
+#: templates/profile.html:3
+msgid "Private profile"
+msgstr ""
+
+#: templates/profile.html:3
+msgid "Public profile"
+msgstr ""
+
+#: templates/profile.html:4 templates/profile_edit.html:2
+#: templates/profile_edit.html:3
+msgid "Edit profile"
+msgstr ""
+
+#: templates/profile.html:9
+msgid "Cancel friend request"
+msgstr ""
+
+#: templates/profile.html:10 templates/profile_edit.html:6
+msgid "About me"
+msgstr ""
+
+#: templates/profile.html:10
+msgid "No introduction yet."
+msgstr ""
+
+#: templates/profile.html:11
+msgid "Only public activities are shown here."
+msgstr ""
+
+#: templates/profile.html:13
+msgid "No workouts to display."
+msgstr ""
+
+#: templates/profile.html:14
+msgid "No training to display."
+msgstr ""
+
+#: templates/profile_edit.html:7
+msgid "Pronouns"
+msgstr ""
+
+#: templates/profile_edit.html:8
+msgid "Favorite sport"
+msgstr ""
+
+#: templates/profile_edit.html:8
+msgid "Not specified"
+msgstr ""
+
+#: templates/profile_edit.html:9 templates/schedule_edit.html:10
+#: templates/training.html:54 templates/workouts.html:30
+msgid "Profile visibility"
+msgstr ""
+
+#: templates/profile_edit.html:9
+msgid "Private — shared group members only"
+msgstr ""
+
+#: templates/profile_edit.html:9
+msgid "Public — anyone can view"
+msgstr ""
+
+#: templates/profile_edit.html:10
+msgid ""
+"Only activities you mark public are shown to other people. Friends do not"
+" override profile privacy."
+msgstr ""
+
+#: templates/profile_edit.html:11
+msgid "Save profile"
+msgstr ""
+
+#: templates/schedule_edit.html:1 templates/schedule_edit.html:2
+#: templates/training.html:24
+msgid "Edit training"
+msgstr ""
+
+#: templates/schedule_edit.html:2
+msgid "Back"
+msgstr ""
+
+#: templates/schedule_edit.html:3
+msgid "Changes apply to this occurrence only. Existing reservations are kept."
+msgstr ""
+
+#: templates/schedule_edit.html:5
+msgid "Title"
+msgstr ""
+
+#: templates/schedule_edit.html:9 templates/training.html:43
+#: templates/workouts.html:22
+msgid "Duration (minutes)"
+msgstr ""
+
+#: templates/schedule_edit.html:12
+msgid "Description"
+msgstr ""
+
+#: templates/schedule_edit.html:13
+msgid "Save changes"
+msgstr ""
+
+#: templates/training.html:4
 msgid "MAKE TIME FOR PROGRESS"
 msgstr ""
 
-#: templates/training.html:2
+#: templates/training.html:5
 msgid "Scheduled training"
 msgstr ""
 
-#: templates/training.html:2
+#: templates/training.html:6
 msgid "Training sessions for your groups. Reserve your next session."
 msgstr ""
 
-#: templates/training.html:2 templates/training.html:3
+#: templates/training.html:7 templates/training.html:33
+#: templates/training.html:56
 msgid "Schedule training"
 msgstr ""
 
-#: templates/training.html:2
+#: templates/training.html:7
 msgid ""
 "Session times use the group’s local time. Confirm the time zone with your"
 " group."
 msgstr ""
 
-#: templates/training.html:2
+#: templates/training.html:19
+msgid "Public on profile"
+msgstr ""
+
+#: templates/training.html:19
+msgid "Private on profile"
+msgstr ""
+
+#: templates/training.html:19
+msgid "Weekly series"
+msgstr ""
+
+#: templates/training.html:22
 msgid "Cancel reservation"
 msgstr ""
 
-#: templates/training.html:2
+#: templates/training.html:22
 msgid "Reserve a place"
 msgstr ""
 
-#: templates/training.html:2
+#: templates/training.html:24
+msgid "Cancel this session and its reservations?"
+msgstr ""
+
+#: templates/training.html:24
+msgid "Cancel session"
+msgstr ""
+
+#: templates/training.html:24
+msgid "Cancel all upcoming sessions in this series?"
+msgstr ""
+
+#: templates/training.html:24
+msgid "Cancel upcoming series"
+msgstr ""
+
+#: templates/training.html:27
 msgid "Your next session is ahead of you."
 msgstr ""
 
-#: templates/training.html:2
+#: templates/training.html:28
 msgid ""
 "Join a group to see its scheduled training. Ask the owner for permission "
 "if you want to schedule sessions."
 msgstr ""
 
-#: templates/training.html:3
+#: templates/training.html:36
 msgid "Group"
 msgstr ""
 
-#: templates/training.html:3
+#: templates/training.html:38
 msgid "Training title"
 msgstr ""
 
-#: templates/training.html:3 templates/workouts.html:4
-msgid "Duration (minutes)"
-msgstr ""
-
-#: templates/training.html:3
+#: templates/training.html:50
 msgid "Training details"
 msgstr ""
 
-#: templates/workouts.html:2
+#: templates/training.html:53
+msgid "Repeat"
+msgstr ""
+
+#: templates/training.html:53
+msgid "Once"
+msgstr ""
+
+#: templates/training.html:53
+msgid "Weekly"
+msgstr ""
+
+#: templates/training.html:53
+msgid "Number of sessions"
+msgstr ""
+
+#: templates/training.html:55
+msgid ""
+"Reservations are separate for each occurrence. Private group training is "
+"shown only to group members."
+msgstr ""
+
+#: templates/workouts.html:4
 msgid "BUILD YOUR MOMENTUM"
 msgstr ""
 
-#: templates/workouts.html:2
+#: templates/workouts.html:5
 msgid "Your workouts"
 msgstr ""
 
-#: templates/workouts.html:2
+#: templates/workouts.html:6
 msgid "Small steps add up. Keep a record of yours."
 msgstr ""
 
-#: templates/workouts.html:4
+#: templates/workouts.html:20
 msgid "Workout title"
 msgstr ""
 
-#: templates/workouts.html:4
+#: templates/workouts.html:24
 msgid "Date"
 msgstr ""
 
-#: templates/workouts.html:4
+#: templates/workouts.html:27
 msgid "Notes (optional)"
 msgstr ""
 
-#: templates/workouts.html:4
+#: templates/workouts.html:31
+msgid ""
+"Public workouts appear on your profile. Private workouts are visible only"
+" to you."
+msgstr ""
+
+#: templates/workouts.html:32
 msgid "Save workout"
 msgstr ""
 

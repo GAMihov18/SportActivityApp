@@ -27,6 +27,8 @@
 <label>{{ _('Notes (optional)') }}<textarea name="notes" maxlength="2000" rows="3">
 </textarea>
 </label>
+<label>{{ _('Profile visibility') }}<select name="visibility"><option value="private">{{ _('Private') }}</option><option value="public">{{ _('Public') }}</option></select></label>
+<p class="muted">{{ _('Public workouts appear on your profile. Private workouts are visible only to you.') }}</p>
 <button class="button dark">{{ _('Save workout') }} ↗</button>
 </form>
 </dialog>{% endblock %}

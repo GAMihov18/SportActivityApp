@@ -1,0 +1,13 @@
+{% extends 'base.html' %}{% from 'macros.html' import token with context %}{% block title %}{{ _('Edit training') if training else _('Edit event') }}{% endblock %}
+{% block content %}<div class="page-heading"><h1>{{ _('Edit training') if training else _('Edit event') }}</h1><a href="{{ url_for('training.training') if training else url_for('events.events') }}">{{ _('Back') }}</a></div>
+<p class="muted">{{ _('Changes apply to this occurrence only. Existing reservations are kept.') }}</p>
+<section class="card detail-panel"><form method="post" class="entry-form">{{ token() }}
+<label>{{ _('Title') }}<input name="title" value="{{ request.form.get('title',item.title) }}" maxlength="100" required></label>
+{% if not training %}<label>{{ _('Sport') }}<select name="sport">{% for sport in sports %}<option value="{{ sport }}" {{ 'selected' if request.form.get('sport',item.sport)==sport }}>{{ _(sport) }}</option>{% endfor %}</select></label>{% endif %}
+<label>{{ _('Location') }}<input name="location" maxlength="160" value="{{ request.form.get('location',item.location) }}" required></label>
+<label>{{ _('Date and time') }}<input type="datetime-local" name="starts_at" value="{{ request.form.get('starts_at',item.starts_at) }}" required></label>
+{% if training %}<label>{{ _('Duration (minutes)') }}<input type="number" name="minutes" min="1" max="1440" value="{{ request.form.get('minutes',item.minutes) }}" required></label>
+<label>{{ _('Profile visibility') }}<select name="visibility"><option value="private" {{ 'selected' if request.form.get('visibility','public' if item.public else 'private')=='private' }}>{{ _('Private') }}</option><option value="public" {{ 'selected' if request.form.get('visibility','public' if item.public else 'private')=='public' }}>{{ _('Public') }}</option></select></label>{% endif %}
+<label>{{ _('Capacity') }}<input type="number" name="capacity" min="1" max="10000" value="{{ request.form.get('capacity',item.capacity) }}" required></label>
+<label>{{ _('Description') }}<textarea name="description" maxlength="2000" required>{{ request.form.get('description',item.description) }}</textarea></label>
+<button class="button dark">{{ _('Save changes') }}</button></form></section>{% endblock %}

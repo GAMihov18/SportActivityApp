@@ -1,0 +1,11 @@
+{% extends 'base.html' %}{% from 'macros.html' import token with context %}
+{% block title %}{{ _('Edit profile') }}{% endblock %}{% block content %}
+<div class="page-heading"><h1>{{ _('Edit profile') }}</h1><a href="{{ url_for('social.mine') }}">{{ _('My profile') }}</a></div>
+<section class="card detail-panel"><form method="post" class="entry-form">{{ token() }}
+<label>{{ _('Name') }}<input name="name" value="{{ request.form.get('name',person.name) }}" maxlength="100" required></label>
+<label>{{ _('About me') }}<textarea name="about" maxlength="2000" rows="5">{{ request.form.get('about',person.about) }}</textarea></label>
+<label>{{ _('Pronouns') }}<input name="pronouns" maxlength="80" value="{{ request.form.get('pronouns',person.pronouns) }}"></label>
+<label>{{ _('Favorite sport') }}<select name="favorite_sport"><option value="">{{ _('Not specified') }}</option>{% for sport in sports %}<option value="{{ sport }}" {{ 'selected' if request.form.get('favorite_sport',person.favorite_sport)==sport }}>{{ _(sport) }}</option>{% endfor %}</select></label>
+<label>{{ _('Profile visibility') }}<select name="privacy"><option value="private" {{ 'selected' if request.form.get('privacy','private' if person.private else 'public')=='private' }}>{{ _('Private — shared group members only') }}</option><option value="public" {{ 'selected' if request.form.get('privacy','private' if person.private else 'public')=='public' }}>{{ _('Public — anyone can view') }}</option></select></label>
+<p class="muted">{{ _('Only activities you mark public are shown to other people. Friends do not override profile privacy.') }}</p>
+<button class="button dark">{{ _('Save profile') }}</button></form></section>{% endblock %}

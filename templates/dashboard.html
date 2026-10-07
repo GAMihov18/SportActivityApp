@@ -57,6 +57,7 @@
 <small>{{ _('Something to look forward to') }}</small>
 </div>
 </section>
+{% if g.user %}{% include 'goals.html' %}{% include 'calendar.html' %}{% endif %}
 <div class="dashboard-columns">
 <section>
 <div class="section-heading">

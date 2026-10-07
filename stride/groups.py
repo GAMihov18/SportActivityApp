@@ -26,6 +26,9 @@ def groups():
         try:
             values = (g.user['id'], field('name', 100), sport(), field('location', 160), field('description', 2000))
             kind = request.form.get('kind', 'community')
+            # Accept old saved forms while presenting the renamed type.
+            if kind == 'private':
+                kind = 'friends'
             if kind not in ('community', 'club', 'friends'):
                 raise ValueError(_('Choose a valid group type.'))
             cursor = db().execute('INSERT INTO groups(owner_id,name,sport,location,description) VALUES(?,?,?,?,?)', values)
